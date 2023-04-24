@@ -1,0 +1,3 @@
+#include <iostream>
+
+//Hier Beispiel der Hashtabelle reinschreiben...
