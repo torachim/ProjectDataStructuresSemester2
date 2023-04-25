@@ -1,5 +1,7 @@
 #include <iostream>
 #include "hashendemenge.hpp"
+#include "list.hpp"
+#include "listnode.hpp"
 #include <memory>
 #include <string>
 #include <functional>
