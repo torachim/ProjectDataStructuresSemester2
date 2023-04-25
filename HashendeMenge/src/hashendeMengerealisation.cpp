@@ -2,11 +2,10 @@
 #include <iostream>
 #include "../include/hashendeMengerealisation.hpp"
 
-namespace ProjectAlpha{
+using namespace ProjectAlpha;
 
-     hashendemengerela::hashendemengerela(){
-
+     hashendeMengerealisation::hashendeMengerealisation()
+     {
      }
 
      //Hier Implementierung der Funktionen fortsetzen.
-}

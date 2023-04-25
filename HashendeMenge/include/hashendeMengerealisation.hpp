@@ -1,22 +1,23 @@
+#pragma once
 #include <iostream>
 #include "hashendemenge.hpp"
 #include "list.hpp"
-#include "listnode.hpp"
 #include <memory>
 #include <string>
-#include <functional>
 #include <cstddef>
-
+#include <functional>
 
 using namespace ProjectAlpha;
 
-    class hashendemengerela : public hashendemenge<std::string>{
+    class hashendeMengerealisation : public hashendemenge<std::string>
+    {
         public:
-            hashendemengerela();
+
+            hashendeMengerealisation();
 
             void insert(const std::string x);
 
-            bool find(const std::string& x) const;
+            bool find(const std::string& x);
 
             void remove(const std::string& x);
 
@@ -27,7 +28,7 @@ using namespace ProjectAlpha;
 
         private:
 
-            const std::function<size_t(const std::string&)> hashfkt;
+            const std::function<size_t(const std::string &)> hashfkt;
 
             size_t num_buckets;
 
