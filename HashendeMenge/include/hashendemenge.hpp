@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 
 namespace ProjectAlpha
@@ -7,7 +6,6 @@ namespace ProjectAlpha
     class hashendemenge
     {
     public:
-        hashendemenge() = 0;                        //Konstruktor
         virtual void insert(T) = 0;                 //Einfuegen eines Wertes
         virtual bool find(T) = 0;                   //Kontrolle ob ein Wert bereits in der Hashtabelle enthalten ist
         virtual void remove(T) = 0;                 //Entfernt einen Wert aus der Hashtabelle

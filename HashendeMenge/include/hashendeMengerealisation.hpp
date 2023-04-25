@@ -1,16 +1,15 @@
-#pragma once 
-
 #include <iostream>
-#include "../include/hashendemenge.hpp"
+#include "hashendemenge.hpp"
+#include <memory>
+#include <string>
 
-namespace ProjectAlpha
-{
+using namespace ProjectAlpha;
 
-    template<class T>
-    class hashendemengerela : public hashendemenge<T>{
+    class hashendemengerela : public hashendemenge<std::string>{
         public:
             hashendemengerela();
-            //hier folgen public Funktionen der Hashtabelle
+
+            void insert(const std::string x);
 
         private:
             //hier folgen private Funktionen der Hashtabelle    
@@ -20,4 +19,3 @@ namespace ProjectAlpha
     
 
 
-}
