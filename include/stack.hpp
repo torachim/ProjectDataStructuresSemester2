@@ -1,24 +1,29 @@
 #include <iostream>
-#include <stacktemplate.hpp>
-#define SIZE 100      ////////////
+#include <../include/stacktemplate.hpp>
+#include sarah
 
 namespace ProjektAlpha{
 
-    class stack{
+
+    template<class T>
+
+    class stack:public stacktemplate<T>{
 
         public:
-         void push (int data);
-         auto pop ();
+        stack(){}
+         void push (T data);
+         T pop ();
          int size();
 
         private:
-        std::vector<int> data;
-        Node* top;
+        abstractlist<T> list;
+       
 
 
 
-    }
-
+    };
 }
+
+
 
 

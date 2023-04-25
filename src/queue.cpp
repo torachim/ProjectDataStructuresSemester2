@@ -1,6 +1,7 @@
 //mithilfe einfach verketteter Liste
 #include<iostream>
-#include<queue.hpp>
+#include<../include/queue.hpp>
+#include sarah
 
 
 
@@ -20,6 +21,8 @@ using namespace ProjectAlpha;
         Queue(): front(nullptr), back(nullptr){}
 
         void enqueue(int data){
+
+            
 
             Node* newNode = newNode (data);
             if(back == nullptr){

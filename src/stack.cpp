@@ -1,8 +1,30 @@
 //mithilfe einfach verketteter Liste
 #include<iostream>
-#include<stack.hpp>
+#include<../include/stack.hpp>
+#include sarah
 
-using namspace ProjectAlpha;
+
+namspace ProjectAlpha{
+
+    template<class T>
+    void stack<T>::push(T data){
+        list.addfirst(data);
+    }
+
+    template<class T>
+    T stack<T>::pop(){
+        list.removefirst();
+    }
+
+    template<class T>
+    int stack<T>::size(){
+        list.size();
+    }
+
+}
+
+
+/*
 
     class stack{
 
@@ -18,11 +40,13 @@ using namspace ProjectAlpha;
 
 
         void push(T data){
+
+
             Node* newNode = newNode (data,top); //Zeiger auf neuen Knoten 
             top= newNode;                       // Neuen Knoten als obersten makieren
         }
 
-        int pull(){
+        T pull(){
             if(top==nullptr){                    //leer? oberster Knoten auf nullptr
                 std::cout<< "Stack is empty." << std::endl;
                 return -1;

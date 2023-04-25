@@ -1,20 +1,20 @@
 #include <iostream>
-#include <queuetemplate.hpp>
+#include <../include/queuetemplate.hpp>
 
 namespace ProjektAlpha{
 
-    class queue{
+    template<classT>
+
+    class queue : public queueinterface<T>{
 
         public:
-         void enqueue (int data);
-         auto dequeue ();
+         void enqueue (T data);
+         T dequeue ();
          int size();
 
         private:
-        std::vector<int> data;
-        Node* front;
-        Node* back;
+        abstarctlist<T> list;
 
-    }
+    };
 
 }
