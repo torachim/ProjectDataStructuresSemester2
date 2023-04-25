@@ -1,6 +1,9 @@
+#pragma once
 #include <iostream>
-#include <../include/stackinterface.hpp>
-#include sarah
+#include "../include/stackinterface.hpp"
+#include "../include/list.hpp"
+#include "../include/listnode.hpp"
+#include "../src/linkedkist.ipp"
 
 namespace ProjektAlpha{
 
@@ -10,13 +13,15 @@ namespace ProjektAlpha{
     class stack:public stacktemplate<T>{
 
         public:
-        stack(){}
+        stack();
         void push (T data);
         T pop ();
         int size();
+        bool isEmpty();
+        void printStack();
 
         private:
-        abstractlist<T> list;
+        List<T> list;
        
 
 
