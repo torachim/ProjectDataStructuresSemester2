@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include "hashendemenge.hpp"
 #include "list.hpp"
@@ -6,10 +5,11 @@
 #include <string>
 #include <cstddef>
 #include <functional>
+#include <vector>
 
 using namespace ProjectAlpha;
 
-    class hashendeMengerealisation : public hashendemenge<std::string>
+    class hashendeMengerealisation : public hashendemenge<class T>
     {
         public:
 
