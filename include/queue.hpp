@@ -1,5 +1,5 @@
 #include <iostream>
-#include <../include/queuetemplate.hpp>
+#include <../include/queueinterface.hpp>
 
 namespace ProjektAlpha{
 
@@ -8,9 +8,10 @@ namespace ProjektAlpha{
     class queue : public queueinterface<T>{
 
         public:
-         void enqueue (T data);
-         T dequeue ();
-         int size();
+        queue(){}
+        void enqueue (T data);
+        T dequeue ();
+        int size();
 
         private:
         abstarctlist<T> list;

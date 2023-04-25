@@ -8,7 +8,7 @@ namespace ProjectAlpha {
 
         public:
             virtual void enqueue(T) =0;  //insert_back
-            virtual auto dequeue() =0;   //remove_front
+            virtual T dequeue() =0;   //remove_front
             virtual int size() =0;
 
     } ;

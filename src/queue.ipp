@@ -7,6 +7,23 @@
 
 using namespace ProjectAlpha;
 
+
+template<class T>
+void queue<T>::enqueue(T data){
+    list.addend(data);
+}
+
+template<class T>
+T queue<T>::dequeue(){
+    list.removefirst();
+}
+
+template<class T>
+int queue<T>::size(){
+    list.size();
+}
+/*
+
     class queue{
 
         struct Node{

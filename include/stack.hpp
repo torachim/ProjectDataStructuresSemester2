@@ -1,5 +1,5 @@
 #include <iostream>
-#include <../include/stacktemplate.hpp>
+#include <../include/stackinterface.hpp>
 #include sarah
 
 namespace ProjektAlpha{
@@ -11,9 +11,9 @@ namespace ProjektAlpha{
 
         public:
         stack(){}
-         void push (T data);
-         T pop ();
-         int size();
+        void push (T data);
+        T pop ();
+        int size();
 
         private:
         abstractlist<T> list;
