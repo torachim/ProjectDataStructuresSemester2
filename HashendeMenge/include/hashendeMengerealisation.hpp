@@ -2,6 +2,9 @@
 #include "hashendemenge.hpp"
 #include <memory>
 #include <string>
+#include <functional>
+#include <cstddef>
+
 
 using namespace ProjectAlpha;
 
@@ -11,8 +14,22 @@ using namespace ProjectAlpha;
 
             void insert(const std::string x);
 
+            bool find(const std::string& x) const;
+
+            void remove(const std::string& x);
+
+            void print() const;
+
+            size_t size() const; 
+
+
         private:
-            //hier folgen private Funktionen der Hashtabelle    
+
+            const std::function<size_t(const std::string&)> hashfkt;
+
+            size_t num_buckets;
+
+            std::vector<List> buckets;  
 
     };
 
