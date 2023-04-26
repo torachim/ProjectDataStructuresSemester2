@@ -124,6 +124,13 @@ namespace ProjectAlpha{
           return falsee;
      }
 
+     template<class T>
+     listNode::listNode<T>(T data){
+          data_ = data;
+          next = nullptr;
+     }
+     
+
 
 //Hier Implementierung der Funktionen fortsetzen.
 }
