@@ -184,6 +184,13 @@ namespace ProjectAlpha{
           return neuerNaechsterKnoten;
      }
 
+     template<class T>
+     ListNodeptr List<T>::remove_after(const ListNodeptr& vorhaerigerknoten){
+         ListNodeptr loeschenKnoten = vorhaerigerknoten -> next;
+         vorhaerigerknoten -> next = loeschenKnoten -> next;
+         return vorhaerigerknoten -> next;
+     }
+
      
 
 
