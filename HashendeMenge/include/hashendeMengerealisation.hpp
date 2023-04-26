@@ -9,17 +9,17 @@
 
 using namespace ProjectAlpha;
 
-    class hashendeMengerealisation : public hashendemenge<class T>
+    class hashendeMengerealisation : public abstract_hashendemenge<class T>
     {
         public:
 
             hashendeMengerealisation();
 
-            void insert(const std::string x);
+            void insert(const T x);
 
-            bool find(const std::string& x);
+            bool find(const T x);
 
-            void remove(const std::string& x);
+            void remove(const T x);
 
             void print() const;
 
