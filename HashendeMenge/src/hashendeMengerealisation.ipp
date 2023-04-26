@@ -125,11 +125,69 @@ namespace ProjectAlpha{
      }
 
      template<class T>
-     listNode::listNode<T>(T data){
+     listNode<T>::listNode(T data){
           data_ = data;
           next = nullptr;
      }
+
+     template<class T>
+     List<T>::List(){
+          head = nullptr;
+     }
+
+     template<class T>
+     ListNodeptr List<T>::get_head() const{
+          return head;
+     }
+
+     template<class T>
+     ListNodeptr List<T>::insert_front(T x){
+          ListNodeptr n = std::make_shared<ListNode>(x);
+          if(head){
+               n -> next = head;
+               head = n;
+          }
+          head = n;
+          return n;
+     }
+
+     template<class T>
+     void List<T>::print() const{
+          ListNodeptr current = head;
+          while(current){
+               std::cout << current -> data_ << "->";
+               current = current -> next;
+          }
+          std::cout << "null" << std::endl;
+     }
+
+     template<class T>
+     ListNodeptr List<T>::remove_front(){
+          if(not head){
+               return nullptr;
+          }
+          ListNodeptr neuerHead = head -> next;
+          head = neuerHead;
+          return neuerHead;
+     }
+
+     template<class T>
+     ListNodeptr List<T>::next(const ListNodeptr& vorhaerigerknoten){
+          return vorhaerigerknoten -> next;
+     }
+
+     template<class T>
+     ListNodeptr List<T>::insert_after(const ListNodeptr& vorhaerigerknoten, T x){
+          ListNodeptr neuerNaechsterKnoten = std::make_shared<ListNode>(x);
+          neuerNaechsterKnoten -> next = vorhaerigerknoten -> next;
+          vorhaerigerknoten -> next = neuerNaechsterKnoten;
+          return neuerNaechsterKnoten;
+     }
+
      
+
+
+
 
 
 //Hier Implementierung der Funktionen fortsetzen.
