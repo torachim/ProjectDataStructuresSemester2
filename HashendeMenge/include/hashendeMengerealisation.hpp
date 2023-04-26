@@ -16,13 +16,13 @@ using namespace ProjectAlpha;
 
             hashendeMengerealisation();
 
-            void insert(T x)override;
+            void insert(T x);
 
-            bool find(const T& x)override;
+            bool find(const T& x);
 
-            void remove(const T& x)override;
+            void remove(const T& x);
 
-            void belegungsfaktor()override;
+            void belegungsfaktor();
 
             void print() const;
 
@@ -35,7 +35,7 @@ using namespace ProjectAlpha;
 
             size_t num_buckets;
 
-            std::vector<List> buckets;  
+            std::vector<List<T> > buckets;  
 
     };
 
