@@ -7,10 +7,10 @@ namespace ProjectAlpha{
     template<class T>
     class listnode{
         public:
-            listnode(T data);
+            explicit listnode(T data);
 
         public:
-            std::shared_ptr<listnode> next;
+            std::shared_ptr<listnode <T> > next;
 
             T data_;
 

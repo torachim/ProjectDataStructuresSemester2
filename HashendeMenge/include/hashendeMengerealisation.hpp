@@ -1,3 +1,5 @@
+
+#pragma once
 #include <iostream>
 #include "hashendemenge.hpp"
 #include "list.hpp"
@@ -18,7 +20,7 @@ using namespace ProjectAlpha;
 
             void insert(T x);
 
-            bool find(const T& x);
+            bool find(const T& x)const;
 
             void remove(const T& x);
 
@@ -31,7 +33,7 @@ using namespace ProjectAlpha;
 
         private:
 
-            const std::function<size_t(const std::string &)> hashfkt;
+            const std::function<size_t(const T &)> hashfkt;
 
             size_t num_buckets;
 

@@ -1,16 +1,18 @@
 #include <functional>
 #include <iostream>
 #include <string>
+#include "../include/list.hpp"
+#include "../include/listnode.hpp"
 #include "../include/hashendeMengerealisation.hpp"
 
-namespace ProjectAlpha{
+using namespace ProjectAlpha;
 
      template<class T>
      hashendeMengerealisation<T>::hashendeMengerealisation():  
           hashfkt(std::hash<T>()),
           num_buckets(32)
      {
-          buckets = std::vector<List>(num_buckets);
+          buckets = std::vector<List <T> >(num_buckets);
      }
 
      template<class T>
@@ -48,7 +50,7 @@ namespace ProjectAlpha{
                }
                ListNodeptr hilfe = aktuell;
                while(aktuell != nullptr){
-                    if(aktuell -> data_ = x){
+                    if(aktuell -> data_ == x){
                          buckets[element].remove_after(hilfe);
                          break;
                     }
@@ -64,7 +66,7 @@ namespace ProjectAlpha{
 
      template<class T>
      void hashendeMengerealisation<T>::belegungsfaktor(){
-          double = size();
+          double s = size();
           double a = num_buckets;
           std::vector<T> zwischenspeicher;
           for(int i = 0; i < num_buckets; i++){
@@ -80,7 +82,7 @@ namespace ProjectAlpha{
           else{
                num_buckets = num_buckets * 0.5;
           }
-          buckets = std::vector<List>(num_buckets);
+          buckets = std::vector<List <T> >(num_buckets);
 
           for(const T &wort : zwischenspeicher){
                insert(wort);
@@ -90,7 +92,7 @@ namespace ProjectAlpha{
 
      template<class T>
      void hashendeMengerealisation<T>::print() const{
-          for(int i = 0; i < num_buckets, i++){
+          for(int i = 0; i < num_buckets; i++){
                buckets[i].print();
           }
           std::cout << "Hashtabelle gedruckt" << std::endl;
@@ -121,11 +123,11 @@ namespace ProjectAlpha{
                     current = current -> next;
                }
           }
-          return falsee;
+          return false;
      }
 
      template<class T>
-     listNode<T>::listNode(T data){
+     listnode<T>::listnode(T data){
           data_ = data;
           next = nullptr;
      }
@@ -142,7 +144,7 @@ namespace ProjectAlpha{
 
      template<class T>
      ListNodeptr List<T>::insert_front(T x){
-          ListNodeptr n = std::make_shared<ListNode>(x);
+          ListNodeptr n = std::make_shared<listnode>(x);
           if(head){
                n -> next = head;
                head = n;
@@ -178,7 +180,7 @@ namespace ProjectAlpha{
 
      template<class T>
      ListNodeptr List<T>::insert_after(const ListNodeptr& vorhaerigerknoten, T x){
-          ListNodeptr neuerNaechsterKnoten = std::make_shared<ListNode>(x);
+          ListNodeptr neuerNaechsterKnoten = std::make_shared<listnode>(x);
           neuerNaechsterKnoten -> next = vorhaerigerknoten -> next;
           vorhaerigerknoten -> next = neuerNaechsterKnoten;
           return neuerNaechsterKnoten;
@@ -197,5 +199,4 @@ namespace ProjectAlpha{
 
 
 
-//Hier Implementierung der Funktionen fortsetzen.
-}
+

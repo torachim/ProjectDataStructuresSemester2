@@ -1,3 +1,4 @@
+
 #pragma once
 #include <memory>
 #include "listnode.hpp"
@@ -14,6 +15,7 @@ namespace ProjectAlpha{
         ListNodeptr insert_after(const ListNodeptr&, T x);
         ListNodeptr remove_front();
         ListNodeptr remove_after(const ListNodeptr&);
+        ListNodeptr get_head()const;
 
         ListNodeptr next(const ListNodeptr&);
 
