@@ -5,12 +5,13 @@
 #include "../include/listnode.hpp"
 #include "../src/linkedlist.ipp"
 
+
 namespace ProjektAlpha {
 
 
     template<class T>
 
-    class stack: public stackinterface<T>{
+    class stack: public stackinterface<T> {
 
         public:
         stack();
