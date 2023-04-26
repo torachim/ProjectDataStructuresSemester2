@@ -63,7 +63,66 @@ namespace ProjectAlpha{
      }
 
      template<class T>
-     void hashendeMengerealisation<T>::belegungsfaktor
+     void hashendeMengerealisation<T>::belegungsfaktor(){
+          double = size();
+          double a = num_buckets;
+          std::vector<T> zwischenspeicher;
+          for(int i = 0; i < num_buckets; i++){
+               ListNodeptr current = buckets[i].get_head();
+               while(current != nullptr){
+                    zwischenspeicher.push_back(current -> data_);
+                    current = current -> next;
+               }
+          }
+          if((s/a) >= 0.75){
+               num_buckets = num_buckets * 2;
+          }
+          else{
+               num_buckets = num_buckets * 0.5;
+          }
+          buckets = std::vector<List>(num_buckets);
+
+          for(const T &wort : zwischenspeicher){
+               insert(wort);
+          }
+
+     }
+
+     template<class T>
+     void hashendeMengerealisation<T>::print() const{
+          for(int i = 0; i < num_buckets, i++){
+               buckets[i].print();
+          }
+          std::cout << "Hashtabelle gedruckt" << std::endl;
+     }
+
+     template<class T>
+     size_t hashendeMengerealisation<T>::size() const{
+          int j = 0;
+          for(int i = 0; i < num_buckets; i++){
+               ListNodeptr current = buckets[i].get_head();
+               while(current != nullptr){
+                    j = j + 1;
+                    current = current -> next;
+               }
+          }
+          return j;
+     }
+
+     template<class T>
+     bool hashendeMengerealisation<T>::find(const T& x)const{
+          int Element = hashfkt(x) % num_buckets;
+          ListNodeptr current = buckets[Element].get_head();
+          while(current != nullptr){
+               if(current -> data_ == x){
+                    return true;
+               }
+               else{
+                    current = current -> next;
+               }
+          }
+          return falsee;
+     }
 
 
 //Hier Implementierung der Funktionen fortsetzen.

@@ -10,7 +10,7 @@
 using namespace ProjectAlpha;
 
     template<class T>
-    class hashendeMengerealisation : public hashendemenge<class T>
+    class hashendeMengerealisation : public hashendemenge<T>
     {
         public:
 
@@ -21,6 +21,8 @@ using namespace ProjectAlpha;
             bool find(const T& x)override;
 
             void remove(const T& x)override;
+
+            void belegungsfaktor()override;
 
             void print() const;
 

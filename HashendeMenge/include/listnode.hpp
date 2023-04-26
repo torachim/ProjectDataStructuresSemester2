@@ -4,16 +4,17 @@
 
 namespace ProjectAlpha{
 
+    template<class T>
     class listnode{
         public:
-            listnode(int data);
+            listnode(T data);
 
         public:
             std::shared_ptr<listnode> next;
 
-            int data_;
+            T data_;
 
     };
 
-    typedef std::shared_ptr<listnode> ListNodeptr;
+    typedef std::shared_ptr<listnode<class T>> ListNodeptr;
 }
