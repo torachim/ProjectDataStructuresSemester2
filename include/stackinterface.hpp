@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-namespace ProjectAlpha{
+namespace ProjectAlpha {
 
     template <class T>
 

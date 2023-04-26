@@ -3,7 +3,7 @@
 
 namespace ProjektAlpha{
 
-    template<classT>
+    template<class T>
 
     class queue : public queueinterface<T>{
 

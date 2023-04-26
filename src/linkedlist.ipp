@@ -12,7 +12,7 @@ namespace ProjectAlpha{
         return newPointer;
     }
 
-    template<class t>
+    template<class T>
     std::shared_ptr<ListNode<T>> List<T>::removeFront()
     {
         if(!head)
@@ -25,7 +25,7 @@ namespace ProjectAlpha{
     }
 
     template<class T>
-    std::shared_ptr<ListNode<t>> List<T> :: getHead()
+    std::shared_ptr<ListNode<T>> List<T> :: getHead()
     {
         return head;
     }
