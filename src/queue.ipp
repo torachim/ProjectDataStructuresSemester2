@@ -1,82 +1,53 @@
 //mithilfe einfach verketteter Liste
-#include<iostream>
-#include<../include/queue.hpp>
-#include sarah
+#include "../include/queue.hpp"
+#include "../include/dlist.hpp"
+#include "../include/dlistnode.hpp"
+#include <iostream>
 
+namespace ProjectAlpha {
 
+    template<class T>
+    queue<T>::queue(): list() {}
 
-using namespace ProjectAlpha;
+    template<class T>
+    void stack<T>::enqueue(T data){
+        list.insertBack(data);
+    }
 
-
-template<class T>
-void queue<T>::enqueue(T data){
-    list.addend(data);
-}
-
-template<class T>
-T queue<T>::dequeue(){
-    list.removefirst();
-}
-
-template<class T>
-int queue<T>::size(){
-    list.size();
-}
-/*
-
-    class queue{
-
-        struct Node{
-            int data;
-            Node* next;
-            Node(int d, Node* n = nullptr): data(d), next(n){}
+    template<class T>
+    T stack<T>::dequeue(){
+        if(isEmpty()){
+            std::cout <<"Stack is empty\n";
+            return T();
         }
-
-        Node* front;
-        Node* back;
-
-        Queue(): front(nullptr), back(nullptr){}
-
-        void enqueue(int data){
-
-            
-
-            Node* newNode = newNode (data);
-            if(back == nullptr){
-                front = newNode;
-                back = newNode;
-            }
-            else{
-                back->next = newNode;
-                back = newNode;
-            }
-        }
-
-        int dequeue(){
-
-            if(front == nullptr){
-                std::cout << "Queue is empty." << std::endl;
-                return -1;
-            }
-            else{                                      //??????? else hin oder nicht
-                int data= front->value;                              
-                Node* temp = front;
-                front= front->next
-                if(front== nullptr){
-                    back = nullptr;
-                }
-                return data;
-            }
-
-            int size(){
-                int size =0;
-                Node* current = front;
-                while (current != nullptr){
-                    size++;
-                    current = current ->next;
-                }
-                return size;
-            }
-            
+        else{
+            t value = list.removeFront()->data_;
+            return value;
         }
     }
+
+    template<class T>
+    int stack<T>::size(){
+        return list.size();
+    }
+
+    template<class T>
+    bool stack<T>::isEmpty(){
+        return(list.getHead== nullptr);
+    }
+
+    template<class T>
+    void stack<T>::printQueue(){
+        return list.print();
+    }
+    
+    
+
+}
+
+
+
+
+
+
+

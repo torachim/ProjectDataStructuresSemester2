@@ -12,9 +12,11 @@ namespace ProjektAlpha{
         void enqueue (T data);
         T dequeue ();
         int size();
+        bool isEmpty();
+        void printQueue();
 
         private:
-        abstarctlist<T> list;
+        dList<T> list;
 
     };
 

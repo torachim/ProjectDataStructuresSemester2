@@ -18,12 +18,11 @@ namespace ProjektAlpha {
         void push (T data);
         T pop ();
         int size();
+        bool isEmpty();
+        void printStack();
 
         private:
         List<T> list;
-       
-
-
 
     };
 }

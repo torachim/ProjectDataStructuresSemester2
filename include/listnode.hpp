@@ -8,11 +8,11 @@ namespace ProjectAlpha{
     class ListNode{
 
         public:
-        LidtNode(T data) : data_(data), next(nullptr) {} ////???
+        ListNode(T data) : data_(data), next(nullptr) {} 
 
         private:
         std::shared_ptr<ListNode<T>> next;
-        t data_;                //???              
+        T data_;                              
 
     };
 }

@@ -11,7 +11,7 @@ namespace ProjectAlpha {
 
     template<class T>
     void stack<T>::push(T data){
-        list.insertFront(data);
+        list.insertAfter(data);
     }
 
     template<class T>
