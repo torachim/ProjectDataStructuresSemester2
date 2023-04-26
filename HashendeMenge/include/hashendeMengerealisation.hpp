@@ -1,4 +1,4 @@
-
+#pragma once
 #include <iostream>
 #include "hashendemenge.hpp"
 #include "list.hpp"
@@ -11,23 +11,22 @@
 using namespace ProjectAlpha;
 
     template<class T>
-    class hashendeMengerealisation : public abstract_hashendemenge<T>
+    class hashendeMengerealisation : public abstract_hashendemenge<class T>
     {
         public:
 
             hashendeMengerealisation();
 
-            void insert(T x);
+            void insert(const T x)override;
 
-            bool find(const T& x)const;
+            bool find(const T& x)const override;
 
-            void remove(const T& x);
-
-            void belegungsfaktor();
+            void remove(const T& x)override;
 
             void print() const;
 
             size_t size() const; 
+
 
 
         private:
@@ -36,7 +35,9 @@ using namespace ProjectAlpha;
 
             size_t num_buckets;
 
-            std::vector<List<T> > buckets;  
+            std::vector<List <T> > buckets;  
+
+            void belegungsfaktor();
 
     };
 
