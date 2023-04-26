@@ -1,9 +1,10 @@
-
+#pragma once 
 #include <functional>
 #include <iostream>
 #include <string>
-#include "../include/list.hpp"
-#include "../include/listnode.hpp"
+#include <memory>
+//#include "../include/list.hpp"
+//#include "../include/listnode.hpp"
 #include "../include/hashendeMengerealisation.hpp"
 
 using namespace ProjectAlpha;
@@ -14,6 +15,12 @@ using namespace ProjectAlpha;
           num_buckets(32)
      {
           buckets = std::vector<List <T> >(num_buckets);
+     }
+
+     template<class T>
+     listnode<T>::listnode(T data){
+          data_ = data;
+          next = nullptr;
      }
 
      template<class T>
@@ -29,7 +36,7 @@ using namespace ProjectAlpha;
                buckets[hashfkt(x) % num_buckets].insert_front(x);
           }
           else {
-               belegungsfaktor(x);
+               belegungsfaktor();
                insert(x);
           }
           
@@ -60,7 +67,7 @@ using namespace ProjectAlpha;
                }
           }
           else{
-               belegungsfaktor(x);
+               belegungsfaktor();
                remove(x);
           }
      }
@@ -127,11 +134,7 @@ using namespace ProjectAlpha;
           return false;
      }
 
-     template<class T>
-     listnode<T>::listnode(T data){
-          data_ = data;
-          next = nullptr;
-     }
+
 
      template<class T>
      List<T>::List(){

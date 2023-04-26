@@ -11,17 +11,17 @@
 using namespace ProjectAlpha;
 
     template<class T>
-    class hashendeMengerealisation : public abstract_hashendemenge<class T>
+    class hashendeMengerealisation : public abstract_hashendemenge<T>
     {
         public:
 
             hashendeMengerealisation();
 
-            void insert(const T x)override;
+            void insert(const T x);
 
-            bool find(const T& x)const override;
+            bool find(const T& x)const;
 
-            void remove(const T& x)override;
+            void remove(const T& x);
 
             void print() const;
 
