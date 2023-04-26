@@ -9,17 +9,20 @@
 
 using namespace ProjectAlpha;
 
-    class hashendeMengerealisation : public abstract_hashendemenge<class T>
+    template<class T>
+    class hashendeMengerealisation : public abstract_hashendemenge<T>
     {
         public:
 
             hashendeMengerealisation();
 
-            void insert(const T x);
+            void insert(T x)override;
 
-            bool find(const T x);
+            bool find(const T& x)override;
 
-            void remove(const T x);
+            void remove(const T& x)override;
+
+            void belegungsfaktor()override;
 
             void print() const;
 
