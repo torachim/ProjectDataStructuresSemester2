@@ -9,17 +9,18 @@
 
 using namespace ProjectAlpha;
 
+    template<class T>
     class hashendeMengerealisation : public hashendemenge<class T>
     {
         public:
 
             hashendeMengerealisation();
 
-            void insert(const std::string x);
+            void insert(T x)override;
 
-            bool find(const std::string& x);
+            bool find(const T& x)override;
 
-            void remove(const std::string& x);
+            void remove(const T& x)override;
 
             void print() const;
 
