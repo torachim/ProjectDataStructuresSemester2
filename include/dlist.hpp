@@ -15,27 +15,17 @@ namespace Datenstrukturen {
     DList();
 
     std::shared_ptr<ListNode<T>> getLast() const;
-    std::shared_ptr<ListNode<T>> insertAfter(T x);
-    std::shared_ptr<ListNode<T>> removeFront()
+    std::shared_ptr<ListNode<T>> insertEnd(T x);
+    std::shared_ptr<ListNode<T>> removeFront();
+    void print() const;
 
+    private:
+    std::shared_ptr<<ListNode<T>> head;
+    std::shared_ptr<<ListNode<T>> tail;
 
-  DListNodeptr remove(const DListNodeptr& n);
-
-  // Get the next Node of the current List
-  DListNodeptr next(const DListNodeptr& n) const;
-  
-  // Get the previous Node of the current List
-  DListNodeptr prev(const DListNodeptr& n) const;
-
-  // Print the current List
-  void print() const;
-
-private:
-  DListNodeptr head;
-  DListNodeptr tail;
-};
+  };
 
 }
 
 
-	
+	 

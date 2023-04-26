@@ -25,12 +25,6 @@ namespace ProjectAlpha{
     }
 
     template<class T>
-    std::shared_ptr<ListNode<T>> List<T> :: getHead()
-    {
-        return head;
-    }
-
-    template<class T>
     int List<T>::size(){
         int count=0;
         std::shared_ptr<ListNode<T>> currentt = head;

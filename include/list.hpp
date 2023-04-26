@@ -14,9 +14,8 @@ namespace ProjectAlpha{
         List(): head(nullptr) {}
         std::shared_ptr<ListNode<T>> insertFront(T);
         std::shared_ptr<ListNode<T>> removeFront();   
-        std::shared_ptr<ListNode<T>> getHead();
         int size();  
-        std::shared_ptr<ListNode<t>> next(const std::shared_ptr<ListNode<T>>&);
+        //std::shared_ptr<ListNode<t>> next(const std::shared_ptr<ListNode<T>>&);
         void print() const;
 
         private:
