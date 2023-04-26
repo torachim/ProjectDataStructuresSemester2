@@ -1,10 +1,31 @@
-//mithilfe einfach verketteter Liste
-#include "../include/queue.hpp"
-#include "../include/dlist.hpp"
-#include "../include/dlistnode.hpp"
 #include <iostream>
+#include <../include/queueinterface.hpp>
 
-namespace ProjectAlpha {
+namespace ProjektAlpha{
+
+    template<class T>
+
+    class queue : public queueinterface<T>{
+
+        public:
+        queue(){}
+        void enqueue (T data);
+        T dequeue ();
+        int size();
+        bool isEmpty();
+        void printQueue();
+
+        private:
+        DList<T> list;
+
+    };
+
+
+
+
+
+/////////////Implementierung/////////
+
 
     template<class T>
     queue<T>::queue(): list() {}
@@ -44,6 +65,9 @@ namespace ProjectAlpha {
     
 
 }
+
+}
+
 
 
 

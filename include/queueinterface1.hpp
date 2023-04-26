@@ -5,13 +5,12 @@ namespace ProjectAlpha {
 
     template <class T>
 
-    class stacktemplate{
+    class queueinterface{
 
         public:
-            virtual void push(T) =0;  //insert_front
-            virtual T pop() =0;    //remove_front
+            virtual void enqueue(T) =0;  //insert_front
+            virtual T dequeue() =0;    //remove_front
             virtual int size() =0;
 
     } ;
 }
-
