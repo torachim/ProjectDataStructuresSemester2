@@ -1,5 +1,5 @@
 #include <iostream>
-#include <../include/queueinterface.hpp>
+#include <../include/queueinterface1.hpp>
 
 namespace ProjektAlpha{
 
@@ -66,7 +66,7 @@ namespace ProjektAlpha{
 
 }
 
-}
+
 
 
 

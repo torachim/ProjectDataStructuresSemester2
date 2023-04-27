@@ -1,12 +1,12 @@
 #pragma once
 #include <iostream>
-#include "../include1/stackinterface1.hpp"
-#include "../include1/list1.hpp"
+#include "../include/stackinterface1.hpp"
+#include "../include/list1.hpp"
 //#include "../include/listnode.hpp"
 //#include "../src/linkedlist.ipp"
 
 
-namespace ProjektAlpha {
+namespace ProjectAlpha {
 
 
     template<class T>
