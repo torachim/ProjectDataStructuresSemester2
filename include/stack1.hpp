@@ -1,4 +1,5 @@
-#pragma once
+#ifndef STACK
+#define STACK
 #include <iostream>
 #include "../include/stackinterface1.hpp"
 #include "../include/list1.hpp"
@@ -26,6 +27,8 @@ namespace ProjectAlpha {
 
     };
 
+    #endif
+
 
 
 
@@ -36,7 +39,7 @@ namespace ProjectAlpha {
 
 
 
-     template<class T>
+    template<class T>
     stack<T>::stack(): list() {}
 
     template<class T>
@@ -74,6 +77,7 @@ namespace ProjectAlpha {
     
 
 }
+
 
 
 

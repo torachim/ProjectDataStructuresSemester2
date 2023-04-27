@@ -1,7 +1,7 @@
 #include <iostream>
 #include <../include/queueinterface1.hpp>
 
-namespace ProjektAlpha{
+namespace ProjectAlpha{
 
     template<class T>
 
