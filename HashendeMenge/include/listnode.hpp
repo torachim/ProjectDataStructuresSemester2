@@ -9,11 +9,11 @@ namespace ProjectAlpha{
 template<class T>
 class listnode{
 public:
-    explicit listnode(T data);
+    explicit listnode(T data);                  //Konstruktor eines Knoten
     
-    std::shared_ptr<listnode<T> > next;
+    std::shared_ptr<listnode<T> > next;         //Nachbarknoten des erstellten Knoten
 
-    T data_;
+    T data_;                                    //Daten welche in dem Knoten gespeichert werden
 
 };
 

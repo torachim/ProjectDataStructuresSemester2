@@ -16,29 +16,29 @@ using namespace ProjectAlpha;
     {
         public:
 
-            hashendeMengerealisation();
+            hashendeMengerealisation();             //Konstruktor einer Hashtabelle
 
-            void insert(const T x);
+            void insert(const T x);                 //Siehe Interface abstract_hashendemenge<T>
 
-            bool find(const T& x)const;
+            bool find(const T& x)const;             //Siehe Interface abstract_hashendemenge<T>
 
-            void remove(const T& x);
+            void remove(const T& x);                //Siehe Interface abstract_hashendemenge<T>
 
-            void print() const;
+            void print() const;                     //Druckt die Hashtabelle
 
-            size_t size() const; 
+            size_t size() const;                    //Gibt die Anzahl an Elementen der Hashtabelle zurueck
 
 
 
         private:
 
-            const std::function<size_t(const T &)> hashfkt;
+            const std::function<size_t(const T &)> hashfkt;     //Hashfunktion welche jeder Information eine Zahl zuordnent durch Zahl % num_buckets lässt dich das Bucket dieser Information zuordnen
 
-            size_t num_buckets;
+            size_t num_buckets;                                 //Anzahl an Buckets dieser Hashtabelle
 
-            std::vector<List <T> > buckets;  
+            std::vector<List <T> > buckets;                     //Ein Vektor welcher die einzelnen Buckets enthällt welche durch Listen realiesiert werden 
 
-            void belegungsfaktor();
+            void belegungsfaktor();                             //Eine Funktion welche abhängig vom Fall die Anzahl an Buckets verdoppelt oder halbiert
 
     };
 
@@ -46,72 +46,70 @@ using namespace ProjectAlpha;
 
 
      template<class T>
-     hashendeMengerealisation<T>::hashendeMengerealisation():  
-          hashfkt(std::hash<T>()),
-          num_buckets(32)
+     hashendeMengerealisation<T>::hashendeMengerealisation():   //Konstruktor der Hashtabelle
+          hashfkt(std::hash<T>()),                              //Hashfunktion
+          num_buckets(32)                                       //Anzahl an Buckets wird auf 32 festgelegt
      {
-          buckets = std::vector<List <T> >(num_buckets);
+          buckets = std::vector<List <T> >(num_buckets);        //Der Vektor mit der passenden Anzahl an Buckets wird erstellt
      }
 
      template<class T>
-     listnode<T>::listnode(T data){
-          data_ = data;
-          next = nullptr;
+     listnode<T>::listnode(T data){                             //Konstruktor eines Listenknoten
+          data_ = data;                                         //data_ wird auf die übergegebene Daten gesetzt
+          next = nullptr;                                       //Der Pfeil der auf das naechste Element zeigt zeigt ins nichts
      }
 
      template<class T>
-     void hashendeMengerealisation<T>::insert(const T x){
-          if(find(x)){
-               std::cout << "Das Element existiert bereits!" << std::endl;
-               return;
+     void hashendeMengerealisation<T>::insert(const T x){       //Funktion die ein Element in die Hashtabelle einfuegt
+          if(find(x)){                                          //Wenn das Element bereits in der Hashtabelle existiert, dann ...
+            throw std::logic_error("Ein Element welches der Liste hinzugefuegt werden soll existiert bereits");     //Fehlermeldung wird ausgegeben 
           }
-          double s = size();
-          double a = num_buckets;
+          double s = size();                                    //s wird auf die Anzahl der Elemente in der Hashtabelle gesetzt
+          double a = num_buckets;                               // a wird auf die Anzahl der Buckets gesetzt
 
-          if((s/a)<0.75){
-               buckets[hashfkt(x) % num_buckets].insert_front(x);
+          if((s/a)<0.75){                                       //Wenn s geteilt a kleiner als 0.75 ist, dann ...
+               buckets[hashfkt(x) % num_buckets].insert_front(x);       //Element wird in sein entsprechendes Bucket eingefuegt
           }
-          else {
-               belegungsfaktor();
-               insert(x);
+          else {                                                //Wenn s geteilt a groeßer als 0.75 ist, dann ...
+               belegungsfaktor();                               //Aufruf der Funktion belegungsfaktor um die Hashtabelle zu erweitern
+               insert(x);                                       //Element wird eingefuegt
           }
           
      }
 
      template<class T>
-     void hashendeMengerealisation<T>::remove(const T& x){
-          if(not find(x)){
-               std::cout << "Das Element konnte nicht gefunden werden!" << std::endl;
-               return;
+     void hashendeMengerealisation<T>::remove(const T& x){      //Funktion welche ein Element aus der Hashtabelle entfernt
+          if(not find(x)){                                      //Wenn das Element nicht gefunden wird, dannn...
+               throw std::invalid_argument("Ein Element welches Entfernt werden sollte existiert nicht");       //Fehlermeldung wird ausgegeben
           }
-          double s = size();
-          double a = num_buckets;
-          if((s/a) > 0.25){
-               int element = hashfkt(x) % num_buckets;
-               std::shared_ptr<listnode <T> > aktuell = buckets[element].get_head();
-               if(aktuell -> data_ == x){
-                    buckets[element].remove_front();
+          double s = size();                                    //s wird auf die Anzahl an Elementen gesetzt
+          double a = num_buckets;                               //a wird auf die Anzahl an Buckets gesetzt
+          if((s/a) > 0.25){                                     //Wenn s geteilt a groeßer als 0.25
+               int element = hashfkt(x) % num_buckets;          //Das Bucket des zu entfernenden Elementes wird berechnen und auf element gesetzt
+               std::shared_ptr<listnode <T> > aktuell = buckets[element].get_head();        //Ein Pointer zeigt auf den Kopf des Entsprechenden Buckets
+               if(aktuell -> data_ == x){                       //Wenn das Head Element auf das der Pointer zeigt dem zu entfernenden Element entspricht, dann ...
+                    buckets[element].remove_front();            //Dann entferne den Kopf des Buckets
                }
-               std::shared_ptr<listnode <T> > hilfe = aktuell;
-               while(aktuell != nullptr){
-                    if(aktuell -> data_ == x){
-                         buckets[element].remove_after(hilfe);
-                         break;
+               std::shared_ptr<listnode <T> > hilfe = aktuell;  //Hilfspointer
+               while(aktuell != nullptr){                       //Solange der Pointer aktuell noch auf ein Listenelement zeigt
+                    if(aktuell -> data_ == x){                  //Überpruefe ob das Element auf welches der Pointer zeigt dem zu entfernenden Element entspricht
+                         buckets[element].remove_after(hilfe);  //Enferne das Element hinter dem Hilfspointer
+                         break;                                 //Breche die Funktion ab
                     }
-                    hilfe = aktuell;
-                    aktuell = aktuell -> next;
+                    hilfe = aktuell;                            //Wurde das Element noch nicht entfernt setze Hilfe auf aktuell
+                    aktuell = aktuell -> next;                  //Setze Aktuell auf sein NAchfolgeknoten
                }
           }
-          else{
-               belegungsfaktor();
-               remove(x);
+          else{                                                 //Ist s/a kleiner als 0.25
+               belegungsfaktor();                               //Rufe Belegungsfaktor auf und halbiere die Anzahl an Buckets
+               remove(x);                                       //Entferne das Element
           }
      }
 
      template<class T>
-     void hashendeMengerealisation<T>::belegungsfaktor(){
-          double s = size();
-          double a = num_buckets;
+     void hashendeMengerealisation<T>::belegungsfaktor(){       //Belegungsfaktorfunktion
+          double s = size();                                    //s wird auf die anzahl an Elementen gestzt
+          double a = num_buckets;                               // a auf die Anzahl an Buckets
           std::vector <T> zwischenspeicher;
           for(int i = 0; i < num_buckets; i++){
                std::shared_ptr<listnode <T> > current = buckets[i].get_head();
