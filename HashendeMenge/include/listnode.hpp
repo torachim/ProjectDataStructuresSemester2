@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LISTNODE
+#define LISTNODE
 #include <memory>
 #include <iostream>
 
@@ -8,13 +9,15 @@ namespace ProjectAlpha{
 template<class T>
 class listnode{
 public:
-    listnode(T data);
+    explicit listnode(T data);
     
-    std::shared_ptr<listnode<T>> next;
+    std::shared_ptr<listnode<T> > next;
 
     T data_;
 
 };
 
-    typedef std::shared_ptr<listnode<class T>> ListNodeptr;
+    
 }
+
+#endif

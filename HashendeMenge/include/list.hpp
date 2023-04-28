@@ -1,5 +1,5 @@
-
-#pragma once
+#ifndef LIST 
+#define LIST
 #include <memory>
 #include <iostream>
 #include "listnode.hpp"
@@ -12,17 +12,19 @@ namespace ProjectAlpha{
 
         List();
 
-        ListNodeptr insert_front(T x);
-        ListNodeptr insert_after(const ListNodeptr&, T x);
-        ListNodeptr remove_front();
-        ListNodeptr remove_after(const ListNodeptr&);
-        ListNodeptr get_head()const;
+        std::shared_ptr<listnode <T> > insert_front(T x);
+        std::shared_ptr<listnode <T> > insert_after(const std::shared_ptr<listnode <T> >&, T x);
+        std::shared_ptr<listnode <T> > remove_front();
+        std::shared_ptr<listnode <T> > remove_after(const std::shared_ptr<listnode<T> >&);
+        std::shared_ptr<listnode <T> > get_head()const;
 
-        ListNodeptr next(const ListNodeptr&);
+        std::shared_ptr<listnode <T> > next(const std::shared_ptr<listnode <T> >&);
 
         void print() const;
 
     private:
-        ListNodeptr head;
+        std::shared_ptr<listnode <T> > head;
     };
 }
+
+#endif
