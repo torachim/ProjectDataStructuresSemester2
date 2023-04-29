@@ -31,6 +31,11 @@ namespace ProjectAlpha{
 
         int prioritaet_;
 
+        std::shared_ptr<Heaptreenode <T> > left_child;
+
+        std::shared_ptr<Heaptreenode <T> > right_child;
+
+        std::weak_ptr<Heaptreenode <T> > parent;
 
     };
 }
