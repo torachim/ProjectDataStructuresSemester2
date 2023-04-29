@@ -13,7 +13,7 @@ namespace ProjectAlpha{
 
         size_t get_size();
 
-        void insert(T x);
+        void insert(T x, int priorität);
 
         T remove();
 
@@ -21,7 +21,7 @@ namespace ProjectAlpha{
 
     private:
 
-        size_t size;    
+        size_t size;
 
     };
 }
