@@ -109,125 +109,125 @@ using namespace ProjectAlpha;
      template<class T>
      void hashendeMengerealisation<T>::belegungsfaktor(){       //Belegungsfaktorfunktion
           double s = size();                                    //s wird auf die anzahl an Elementen gestzt
-          double a = num_buckets;                               // a auf die Anzahl an Buckets
-          std::vector <T> zwischenspeicher;
-          for(int i = 0; i < num_buckets; i++){
-               std::shared_ptr<listnode <T> > current = buckets[i].get_head();
-               while(current != nullptr){
-                    zwischenspeicher.push_back(current -> data_);
-                    current = current -> next;
+          double a = num_buckets;                               // a auf die Anzahl an Buckets gestzt
+          std::vector <T> zwischenspeicher;                     //Vektor Zwischenspeicher wird erstellt
+          for(int i = 0; i < num_buckets; i++){                 //for Schleife welche durch die Tabelle durch itteriert 
+               std::shared_ptr<listnode <T> > current = buckets[i].get_head();       //shared Pointer welcher auf das erste Element des entsprechenden Buckets zeigt
+               while(current != nullptr){                       //Solange der Pointer nicht ins nichts zeigt
+                    zwischenspeicher.push_back(current -> data_);          //Das Element auf welches der Pointer zeigt wird in den Zwischenspeicher eingefuegt und aus dem Bucket entfernt
+                    current = current -> next;                  //Der Pointer wecheselt auf das naechste Element 
                }
           }
-          if((s/a) >= 0.75){
-               num_buckets = num_buckets * 2;
+          if((s/a) >= 0.75){                                    //Wenn s geteilt a groeßer gleich 0.75 ist, dann
+               num_buckets = num_buckets * 2;                   //Bucket Anzahl wird verdoppelt
           }
-          else{
-               num_buckets = num_buckets * 0.5;
+          else{                                                 //Wenn s geteilt a kleiner als 0.25 ist, dann
+               num_buckets = num_buckets * 0.5;                 //Buckets Anzahl wird verdoppelt
           }
-          buckets = std::vector<List <T> >(num_buckets);
+          buckets = std::vector<List <T> >(num_buckets);        //Hashtabelle wird neu gebaut
 
-          for(const T &wort : zwischenspeicher){
-               insert(wort);
+          for(const T &wort : zwischenspeicher){                //range-based for loop um die Woerter wieder in die Hashtabelle einzufuegen
+               insert(wort);                                  //Woerter werden eingefuegt
           }
 
      }
 
      template<class T>
-     void hashendeMengerealisation<T>::print() const{
-          for(int i = 0; i < num_buckets; i++){
-               buckets[i].print();
+     void hashendeMengerealisation<T>::print() const{           //Print Funktion welche die Hashtabelle druckt
+          for(int i = 0; i < num_buckets; i++){                 //for Schleife welche durch die buckets itteriert
+               buckets[i].print();                              //Drucke Funktion der einzelnen Listen wird aufgerufen
           }
           std::cout << "Hashtabelle gedruckt" << std::endl;
      }
 
      template<class T>
-     size_t hashendeMengerealisation<T>::size() const{
-          int j = 0;
-          for(int i = 0; i < num_buckets; i++){
-               std::shared_ptr<listnode <T> > current = buckets[i].get_head();
-               while(current != nullptr){
-                    j = j + 1;
-                    current = current -> next;
+     size_t hashendeMengerealisation<T>::size() const{          //Funktion welche die Anzahl an Elementen der Hashtabelle zurueckgibt
+          int j = 0;                                            //Zählvariable j
+          for(int i = 0; i < num_buckets; i++){                 //for Schleife um durch die BUckets durch zu itterieren
+               std::shared_ptr<listnode <T> > current = buckets[i].get_head();       //shared Pointer welcher auf den head des Buckets zeigt
+               while(current != nullptr){                       //Solange der Pointer nicht ins nichts zeigt, dann...
+                    j = j + 1;                                  //Zählvariable + 1 da Element gefunden
+                    current = current -> next;                  //Zeiger zeigt auf Naechtses Element des Buckets 
                }
           }
-          return j;
+          return j;                                             //Zaehlvariable wird zurueckgegeben
      }
 
      template<class T>
-     bool hashendeMengerealisation<T>::find(const T& x)const{
-          int Element = hashfkt(x) % num_buckets;
-          std::shared_ptr<listnode <T> > current = buckets[Element].get_head();
-          while(current != nullptr){
-               if(current -> data_ == x){
-                    return true;
+     bool hashendeMengerealisation<T>::find(const T& x)const{         //Funktion welche ueberprueft ob ein Element in der Hashtabelle enthalten ist
+          int Element = hashfkt(x) % num_buckets;                     //Das Bucket des potentiellen Elements wird berechnet
+          std::shared_ptr<listnode <T> > current = buckets[Element].get_head();           //Shared Pointer welcher auf den Kopf des entsprechenden Buckets zeigt
+          while(current != nullptr){                                  //Solange der Pointer nicht ins nichts zeigt...
+               if(current -> data_ == x){                             //Wenn die data an der Stelle des zu suchendem Objekts entspricht, dann...
+                    return true;                                      //Gebe true zurueck, da Objekt gefunden
                }
-               else{
-                    current = current -> next;
+               else{                                                  //Wenn die data nicht dem zu suchenden Objekt entspricht, dann
+                    current = current -> next;                        //Wechsle auf das naechste Objekt
                }
           }
-          return false;
+          return false;                                               //Wenn das zu suchende Objekt nicht gefunden wird wird false zurueckgegeben
      }
 
 
 
      template<class T>
-     List<T>::List(){
-          head = nullptr;
+     List<T>::List(){                                                 //Konstruktor einer Liste
+          head = nullptr;                                             //Head zeigt ins nichts
      }
 
      template<class T>
-     std::shared_ptr<listnode <T> > List<T>::get_head() const{
-          return head;
+     std::shared_ptr<listnode <T> > List<T>::get_head() const{        //Funktion welche den head einer Liste zurueckgibt
+          return head;                                                //Kopf wird zurueckgegebn
      }
 
      template<class T>
-     std::shared_ptr<listnode <T> > List<T>::insert_front(T x){
-          std::shared_ptr<listnode <T> > n = std::make_shared<listnode <T> >(x);
-          if(head){
-               n -> next = head;
-               head = n;
+     std::shared_ptr<listnode <T> > List<T>::insert_front(T x){       //Funktion welche ein Element vorne in der Liste einfuegt
+          std::shared_ptr<listnode <T> > n = std::make_shared<listnode <T> >(x);          //Es wird ein Pointer erzeugt welhcer auf das Objekt zeigt welches eingefuegt werden soll
+          if(head){                                                   //Wenn ein head schon existiert, dann..
+               n -> next = head;                                      //Wird der momentane head als nachfolger vom euen Element festgelegt
+               head = n;                                              //Der head wird auf n verschoben
           }
-          head = n;
+          head = n;                                                   //Wenn kein head existiert wird einfach der head auf n gestezt
           return n;
      }
 
      template<class T>
-     void List<T>::print() const{
-          std::shared_ptr<listnode <T> > current = head;
-          while(current){
-               std::cout << current -> data_ << "->";
-               current = current -> next;
+     void List<T>::print() const{                                     //Funktion welche eine Liste ausdruckt
+          std::shared_ptr<listnode <T> > current = head;              //Shared Pointer zeigt auf den aktuellen head
+          while(current){                                             //Solange Current noch auf Elemente zeigt
+               std::cout << current -> data_ << "->";                 //Drucke die aktuelle Data
+               current = current -> next;                             //Wechsel auf nachfolger Element
           }
-          std::cout << "null" << std::endl;
+          std::cout << "null" << std::endl;                           //Null wird gedruckt sobald der pointer ins nichts zeigt
      }
 
      template<class T>
-     std::shared_ptr<listnode <T> > List<T>::remove_front(){
-          if(not head){
-               return nullptr;
+     std::shared_ptr<listnode <T> > List<T>::remove_front(){          //Element welches das erste Element einer Liste entfernt
+          if(not head){                                               //Wenn kein Head existiert...
+               return nullptr;                                        //Gebe den Nullpointer zurueck
           }
-          std::shared_ptr<listnode <T> > neuerHead = head -> next;
-          head = neuerHead;
+          std::shared_ptr<listnode <T> > neuerHead = head -> next;    //Shared pointer neuer Head zeigt auf das nachfolge Element vom head 
+          head = neuerHead;                                           //head wird auf den neuen Head gesetzt
           return neuerHead;
      }
 
      template<class T>
-     std::shared_ptr<listnode <T> > List<T>::next(const std::shared_ptr<listnode <T> >& vorhaerigerknoten){
+     std::shared_ptr<listnode <T> > List<T>::next(const std::shared_ptr<listnode <T> >& vorhaerigerknoten){        //Funktion welche einen pointer auf das nachfolge Element eines Knoten zeigt
           return vorhaerigerknoten -> next;
      }
 
      template<class T>
-     std::shared_ptr<listnode <T> > List<T>::insert_after(const std::shared_ptr<listnode <T> >& vorhaerigerknoten, T x){
-          std::shared_ptr<listnode <T> > neuerNaechsterKnoten = std::make_shared<listnode <T> >(x);
-          neuerNaechsterKnoten -> next = vorhaerigerknoten -> next;
-          vorhaerigerknoten -> next = neuerNaechsterKnoten;
+     std::shared_ptr<listnode <T> > List<T>::insert_after(const std::shared_ptr<listnode <T> >& vorhaerigerknoten, T x){  //Funktion welche ein Element hinter ein anderes einfuegt
+          std::shared_ptr<listnode <T> > neuerNaechsterKnoten = std::make_shared<listnode <T> >(x);                  //Ein shared Pointer auf das neue Element wird erzeugt
+          neuerNaechsterKnoten -> next = vorhaerigerknoten -> next;                                                       //Das naechste Element des neuen Knoten wird festgelegt auf das nachfolge Element vom gegebenen Knoten
+          vorhaerigerknoten -> next = neuerNaechsterKnoten;                                                               //Der gegebene Knoten bekommt den neuen Knoten als nachfolger
           return neuerNaechsterKnoten;
      }
 
      template<class T>
-     std::shared_ptr<listnode <T> > List<T>::remove_after(const std::shared_ptr<listnode <T> >& vorhaerigerknoten){
-         std::shared_ptr<listnode <T> > loeschenKnoten = vorhaerigerknoten -> next;
-         vorhaerigerknoten -> next = loeschenKnoten -> next;
+     std::shared_ptr<listnode <T> > List<T>::remove_after(const std::shared_ptr<listnode <T> >& vorhaerigerknoten){        //Funktion welche ein Element hinter einem anderen entfernt
+         std::shared_ptr<listnode <T> > loeschenKnoten = vorhaerigerknoten -> next;                                        //Ein Pointer auf das zu loeschende Objekt wird erstellt
+         vorhaerigerknoten -> next = loeschenKnoten -> next;                                                               //Der nachfolger vom zu loeschenden Knoten wird der nachfolger von seinem vorgaenger. Somit wird der zu loeschende Knoten nicht mehr verwaltet und geloescht
          return vorhaerigerknoten -> next;
      }
 
