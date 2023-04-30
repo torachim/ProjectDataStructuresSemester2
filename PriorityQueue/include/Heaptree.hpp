@@ -1,4 +1,4 @@
-#ifndef HEAPTREE
+/*#ifndef HEAPTREE
 #define HEAPTREE
 #include <iostream>
 #include <memory>
@@ -26,4 +26,4 @@ namespace ProjectAlpha{
 
 
 
-#endif
+#endif*/
