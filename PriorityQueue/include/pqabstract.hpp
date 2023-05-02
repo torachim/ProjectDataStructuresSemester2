@@ -1,7 +1,6 @@
 #ifndef ABSTRACT_PQUEUE
 #define ABSTRACT_PQUEUE
 #include <iostream>
-#include "PQueuenode.hpp"
 
 namespace ProjectAlpha{
 
@@ -10,7 +9,7 @@ namespace ProjectAlpha{
     {
     public:
           virtual int get_size() = 0;
-          virtual void insert (PQnode <T>) = 0;
+          virtual void insert (T data, int prioritaet) = 0;
           virtual T remove() =0; 
     };
 

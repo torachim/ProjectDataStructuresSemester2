@@ -3,32 +3,31 @@
 #include <iostream>
 #include "pqabstract.hpp"
 #include "PQueuenode.hpp"
-#include<vector>
-#include <algorithm>
-#include <utility>
-#include <string_view>
+#include <vector>
+
+
 
 using namespace ProjectAlpha;
 
     template<class T>
-    class PQueue_realisation : public abstract_Pqueue<T> {
+    class PQueue_realisation : public abstract_Pqueue<T>{
     public:
 
         PQueue_realisation();
 
         int get_size();
 
-        void insert(PQnode<T> p);
+        void insert(T data, int prioritaet);
 
         T remove();
 
         void print();
 
+        std::vector<PQnode <T> > Schlange;
+
         
 
     private:
-
-        std::vector<PQnode <T> > Schlange;
 
         int size;
 
@@ -52,13 +51,12 @@ using namespace ProjectAlpha;
 
     template<class T>
     PQueue_realisation<T>::PQueue_realisation(){
-        size = -1;
+        size = 0;
+        //Schlange = std::vector<std::shared_ptr<PQnode <T> > >();
     }
 
     template<class T>
-    PQnode<T>::PQnode(T data, int prioritaet){
-        data_ = data;
-        prioritaet_ = prioritaet;
+    PQnode<T>::PQnode(T data, int prioritaet): data_(data), prioritaet_(prioritaet){
     }
 
     template<class T>
@@ -68,29 +66,33 @@ using namespace ProjectAlpha;
 
     template<class T>
     int PQueue_realisation<T>::get_size(){
-        return size + 1;
+        return size;
     }
 
     template<class T>
-    void PQueue_realisation<T>::insert(PQnode <T> p){
-        size = size + 1; 
-        Schlange[size] = p;
+    void PQueue_realisation<T>::insert(T data, int prioritaet){
+        PQnode<T> p = PQnode<T>(data, prioritaet);
+        Schlange.push_back(p);
         shift_up(size);
+        size = size + 1;
     }
 
     template<class T>
     int PQueue_realisation<T>::parent(int i){
-        return (i - 1)/2;
+        int t = (i - 1)/2;
+        return t;
     }
 
     template<class T>
     int PQueue_realisation<T>::right_child(int i){
-        return ((2 * i)+ 2);
+        int t = ((2 * i)+ 2);
+        return t;
     }
 
     template<class T>
     int PQueue_realisation<T>::left_child(int i){
-        return ((2 * i) + 1);
+        int t = ((2 * i)+ 1);
+        return t;
     }
 
     template<class T>
@@ -101,10 +103,12 @@ using namespace ProjectAlpha;
     template<class T>
     void PQueue_realisation<T>::shift_up(int i){
         while(i > 0 and (Schlange[i].get_prioritaet() > Schlange[parent(i)].get_prioritaet())){
-            std::swap(Schlange[parent(i)], Schlange[i]);
+            //std::swap(Schlange[parent(i)], Schlange[i]);
+            PQnode <T> hilfe = Schlange[parent(i)];
+            Schlange[parent(i)] = Schlange[i];
+            Schlange[i] = hilfe;
             i = parent(i);
         }
-        return;
     }
 
     template<class T>
@@ -119,7 +123,10 @@ using namespace ProjectAlpha;
             max_indx = r;
         }
         if(i != max_indx){
-            std::swap(Schlange[i], Schlange[max_indx]);
+           // std::swap(Schlange[i], Schlange[max_indx]);
+            PQnode <T> hilfe = Schlange[max_indx];
+            Schlange[max_indx] = Schlange[i];
+            Schlange[i] = hilfe;
             shift_down(max_indx);
         }
     }
@@ -127,17 +134,17 @@ using namespace ProjectAlpha;
     template<class T>
     T PQueue_realisation<T>::remove(){
         T result = Schlange[0].get_data();
-        Schlange[0] = Schlange[size];
+        Schlange[0] = Schlange[size - 1];
         size = size - 1;
+        Schlange.pop_back();
         shift_down(0);
         return result;
     }
 
     template<class T>
     void PQueue_realisation<T>::print(){
-        for(int k = 0; k > size; k++){
-            std::cout << Schlange[k].get_data();
-            std::cout << "->" << std::endl;
+        for(int k = 0; k < size; k++){
+            std::cout << Schlange[k].get_data() << std::endl;;
         }
     }
 
