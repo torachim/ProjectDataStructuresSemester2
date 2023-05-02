@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <memory>
+#include "../include/sarahlist.hpp"
 
 namespace ProjectAlpha{ 
 
@@ -39,11 +40,11 @@ template <typename E>
     public:
         DoppeltVerkettet() : EinfachVerkettet<E>(), tail(nullptr) {}
 
-        void add(E element) override {
+        void add(E element)  {
             addLast(element);
         }
 
-        void addFirst(E element) override {
+        void addFirst(E element) {
             if (this->head == nullptr) {
                 this->head = std::make_shared<Node<E>>(element);
                 this->tail = this->head;
@@ -54,7 +55,7 @@ template <typename E>
             this->size_++;
         }
 
-        void addLast(E element) override {
+        void addLast(E element) {
             if (this->tail == nullptr) {
                 this->tail = std::make_shared<Node<E>>(element);
                 this->head = this->tail;
@@ -66,7 +67,7 @@ template <typename E>
             this->size_++;
         }
 
-        E remove(int index) override {
+        E remove(int index)  {
             if (index < 0 || index >= this->size_) {
                 throw std::out_of_range("Index out of range");
             }
@@ -91,7 +92,7 @@ template <typename E>
             return removed;
         }
 
-        E removeFirst() override {
+        E removeFirst()  {
             if (this->head == nullptr) {
                 throw std::out_of_range("List is empty");
             }
@@ -106,7 +107,7 @@ template <typename E>
             return removed;
         }
 
-        int size() const override {
+        int size() const  {
             return this->size_;
         }
     };

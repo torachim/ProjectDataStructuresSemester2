@@ -4,19 +4,19 @@
 
 namespace ProjectAlpha{
 
-    template<class T>
+    template<class E>
 
-    class queue : public queueinterface<T>{
+    class queue : public queueinterface<E>{
 
         public:
         queue(){}
-        void enqueue (T data);
-        T dequeue ();
+        void enqueue (E data);
+        E dequeue ();
         int size();
         void printQueue();
 
         private:
-        Doppelt<T> list;
+        DoppeltVerkettet<E> list;
 
     };
 
@@ -27,22 +27,23 @@ namespace ProjectAlpha{
 /////////////Implementierung/////////
 
 
-    template<class T>
-    queue<T>::queue(): list() {}
+    template<class E>
+    queue<E>::queue(): list() {}
 
-    template<class T>
-    void queue<T>::enqueue(T data){
-        list.insertEnd(data);
+    template<class E>
+    void queue<E>::enqueue(E data){
+        list.add(data);
     }
 
     template<class T>
     T queue<T>::dequeue(){
-        if(isEmpty()){
-            std::cout <<"Stack is empty\n";
-            return T();
+       
+       if (list.head== nullptr) {
+            throw std::out_of_range("Queue is empty");
         }
+        
         else{
-            t value = list.removeFront()->data_;
+            t value = list.removeFirst()->data_;
             return value;
         }
     }
@@ -52,10 +53,7 @@ namespace ProjectAlpha{
         return list.size();
     }
 
-    template<class T>
-    bool queue<T>::isEmpty(){
-        return(list.getHead== nullptr);
-    }
+   
 
     template<class T>
     void queue<T>::printQueue(){

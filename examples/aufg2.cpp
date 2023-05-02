@@ -18,16 +18,15 @@ int main(){
      s.push(9);
      s.printStack();
 
-     
- 
 
 }
 
 
+//clang++ -std=c++17 -I./include  examples/aufg2.cpp -o stack
+//./stack
+
+
  
 
 
 
-//clang++ -std=c++17 -I./include src/stack.ipp examples/aufg2.cpp
-
-//clang++ -std=c++17 -I./include  examples/aufg2.cpp

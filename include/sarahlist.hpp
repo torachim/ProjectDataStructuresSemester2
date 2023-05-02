@@ -3,6 +3,7 @@
 #include <string>
 #include <memory>
 
+
 namespace ProjectAlpha{ 
 
 template <typename E>
@@ -82,10 +83,15 @@ public:
     }
 
     E removeFirst() override {
+        if (list.head== nullptr) {
+            throw std::out_of_range("list is empty");
+        }
+        else{
         E removed = head->element;
         head = head->next;
         size_--;
         return removed;
+        }
     }
 
     E get(int index) const override {
