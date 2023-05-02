@@ -100,31 +100,47 @@ using namespace ProjectAlpha;
 
     /**
      * @brief Construct a new PQnode<T>::PQnode object
-     * 
+     * data_ im Privat bekommt data selbiges gilt für prioritaet_
      * @tparam T 
-     * @param data 
-     * @param prioritaet 
+     * @param data T ist generisch
+     * @param prioritaet immer ein int 
      */
     template<class T>
     PQnode<T>::PQnode(T data, int prioritaet): data_(data), prioritaet_(prioritaet){
     }
 
     /**
-     * @brief 
+     * @brief gibt die data_ eines Knoten zurueck
      * 
-     * @tparam T 
-     * @return T 
+     * @tparam T generisch
+     * @return T generisch
      */
     template<class T>
     T PQnode<T>::get_data(){
         return data_;
     }
 
+    /**
+     * @brief Gibt die Anzahl an Elementen der PriorityQueue zurueck
+     * 
+     * @tparam T 
+     * @return int 
+     */
     template<class T>
     int PQueue_realisation<T>::get_size(){
         return size;
     }
 
+    /**
+     * @brief Fuegt ein Element in die PriorityQueue ein
+     * Es wird erst ein Knoten mit den entsprechenden Daten data und prioritaet erzeugt
+     * Dieser Knoten wird hinten  in die PQ eingefuegt
+     * Funktion shift_up wird aufgerufen um die Heapeigenschaft wieder herzustellen
+     * size wird um eins erhoeht
+     * @tparam T 
+     * @param data Information des Knoten
+     * @param prioritaet Prioritaet sprich wichtigkeit
+     */
     template<class T>
     void PQueue_realisation<T>::insert(T data, int prioritaet){
         PQnode<T> p = PQnode<T>(data, prioritaet);
@@ -133,33 +149,67 @@ using namespace ProjectAlpha;
         size = size + 1;
     }
 
+    /**
+     * @brief Hilfsfunktion um den index des Elternknoten herauszufinden
+     * Formel gibt Index des Elternknoten als Loesung
+     * @tparam T 
+     * @param i Index eines Knoten
+     * @return int Index des Elternknoten
+     */
     template<class T>
     int PQueue_realisation<T>::parent(int i){
         int t = (i - 1)/2;
         return t;
     }
 
+    /**
+     * @brief Hilfsfunktion um den Index des rechten Kindes zu bekommen
+     * Formel gibt den Index des rechten Kindes als Loesung zurueck
+     * @tparam T 
+     * @param i Index eines Knoten
+     * @return int Index des rechten Kindes
+     */
     template<class T>
     int PQueue_realisation<T>::right_child(int i){
         int t = ((2 * i)+ 2);
         return t;
     }
 
+    /**
+     * @brief Hilfsfunktion um den Index des linken Kind zu bekommen 
+     * Formel gibt den Index des linken Kindes als Loesung zurueck
+     * @tparam T 
+     * @param i Index eines Knoten
+     * @return int Index des linken Kindes
+     */
     template<class T>
     int PQueue_realisation<T>::left_child(int i){
         int t = ((2 * i)+ 1);
         return t;
     }
 
+    /**
+     * @brief Funktion welche die Prioritaet zurueckgibt
+     * 
+     * @tparam T 
+     * @return int 
+     */
     template<class T>
     int PQnode<T>::get_prioritaet(){
         return prioritaet_;
     }
 
+    /**
+     * @brief Funktion welche die Heap eigenschaft von unten wiederherstellt
+     * Solange i > 0 also Das Element nicht die Wurzel ist und die die Prioriritaet des eingefuegten Knoten hoeher ist als die seines Elternknoten
+     * Wird der Eingefuegte Knoten mit seinem Elternknoten getauscht. Das ganze wird so lange wiederholt bis eine der oben genannten Bedingungen nicht 
+     * mehr gilt.
+     * @tparam T 
+     * @param i Index eines Knoten hier der Index des neu eingefuegten Knoten
+     */
     template<class T>
     void PQueue_realisation<T>::shift_up(int i){
         while(i > 0 and (Schlange[i].get_prioritaet() > Schlange[parent(i)].get_prioritaet())){
-            //std::swap(Schlange[parent(i)], Schlange[i]);
             PQnode <T> hilfe = Schlange[parent(i)];
             Schlange[parent(i)] = Schlange[i];
             Schlange[i] = hilfe;
@@ -167,6 +217,15 @@ using namespace ProjectAlpha;
         }
     }
 
+    /**
+     * @brief Funktion welche die Heapeigenschaft nach dem entfernen wieder herstellt
+     * Eine Hilfsvariable max_index wird auf den Index des aufrufenden Knoten gesetzt. Wenn die Prioritaet des gegebenen Knoten niedriger 
+     * ist als die seines linken Kindes wird max-indx auf den Index des linken Kindes gesetzt. Danach wird selbiges noch mit dem rechten
+     * Kind von i ueberprueft. Wenn i und max_indx nicht der selbe Knoten ist sollen die beiden Knoten getauscht werden und die Funktion 
+     * wird erneut aufgerufen.
+     * @tparam T 
+     * @param i Index eines Knoten hier der durch das entfernen hoch getauschte Knoten
+     */
     template<class T>
     void PQueue_realisation<T>::shift_down(int i){
         int max_indx = i;
@@ -187,6 +246,13 @@ using namespace ProjectAlpha;
         }
     }
 
+    /**
+     * @brief Funktion welche das Element mit der hoechsten Prioritaet entfernt
+     * Erst wird die data des zu entfernenden Knoten gespeichert. Dann wird der zu entfernende Knoten mit dem letzten Knoten getauscht.
+     * Die size wird um eins reduziert und das letzte Element der PQ entfernt. Um die Heap Eigenschaft wieder herzustellen.
+     * @tparam T 
+     * @return T Die data des entfernten Knoten mit der hoechsten Prioritaet
+     */
     template<class T>
     T PQueue_realisation<T>::remove(){
         T result = Schlange[0].get_data();
@@ -197,9 +263,14 @@ using namespace ProjectAlpha;
         return result;
     }
 
+    /**
+     * @brief Funktion welche die PQ druckt
+     * Funktion druckt die Priority Queue nach ihrer Priorisierung aus
+     * @tparam T 
+     */
     template<class T>
     void PQueue_realisation<T>::print(){
         for(int k = 0; k < size; k++){
-            std::cout << Schlange[k].get_data() << std::endl;;
+            std::cout << Schlange[k].get_data() << std::endl;
         }
     }
