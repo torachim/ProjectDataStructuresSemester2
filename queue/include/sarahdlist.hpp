@@ -2,11 +2,10 @@
 #include <iostream>
 #include <string>
 #include <memory>
-#include "../include/sarahlist.hpp"
 
 namespace ProjectAlpha{ 
 
-template <typename E>
+/*template <typename E>
 class AbstractListe {
 public:
     virtual void add(E element) = 0;
@@ -16,35 +15,39 @@ public:
     virtual E removeFirst() = 0;
     virtual E get(int index) const = 0;
     virtual int size() const = 0;
-};
+};*/
 
 template <typename E>
 class Node {
 public:
     E element;
     std::shared_ptr<Node<E>> next;
-    std::shared_ptr<Node<E>> prev;
+    std::weak_ptr<Node<E>> prev;
 
-    Node(E element, std::shared_ptr<Node<E>> next = nullptr, std::shared_ptr<Node<E>> prev = nullptr) {
-        //this->element = element;
-        //this->next = next;
+    Node(E element, std::shared_ptr<Node<E>> next = nullptr) {
+        this->element = element;
+        this->next = next;
         //this->prev = prev;
     }
 };
 
 template <typename E>
-    class DoppeltVerkettet : public EinfachVerkettet<E> {
-    private:
-        std::shared_ptr<Node<E>> tail;
-
+    class DoppeltVerkettet {
     public:
-        DoppeltVerkettet() : EinfachVerkettet<E>(), tail(nullptr) {}
+        std::shared_ptr<Node<E>> tail;
+        std::shared_ptr<Node<E>> head;
+        int size_;
+        
+
+
+    
+        DoppeltVerkettet() : head(nullptr), tail(nullptr) {}
 
         void add(E element)  {
             addLast(element);
         }
 
-        void addFirst(E element) {
+        /*void addFirst(E element) {
             if (this->head == nullptr) {
                 this->head = std::make_shared<Node<E>>(element);
                 this->tail = this->head;
@@ -53,21 +56,21 @@ template <typename E>
                 this->head->next->prev = this->head;
             }
             this->size_++;
-        }
+        }*/
 
         void addLast(E element) {
             if (this->tail == nullptr) {
                 this->tail = std::make_shared<Node<E>>(element);
                 this->head = this->tail;
             } else {
-                std::shared_ptr<Node<E>> newTail = std::make_shared<Node<E>>(element, nullptr, this->tail);
+                std::shared_ptr<Node<E>> newTail = std::make_shared<Node<E>>(element);
                 this->tail->next = newTail;
                 this->tail = newTail;
             }
             this->size_++;
         }
 
-        E remove(int index)  {
+        /*E remove(int index)  {
             if (index < 0 || index >= this->size_) {
                 throw std::out_of_range("Index out of range");
             }
@@ -90,7 +93,7 @@ template <typename E>
             current.reset();
             this->size_--;
             return removed;
-        }
+        }*/
 
         E removeFirst()  {
             if (this->head == nullptr) {
@@ -101,7 +104,7 @@ template <typename E>
             if (this->head == nullptr) {
                 this->tail = nullptr;
             } else {
-                this->head->prev = nullptr;
+                this->head->prev.lock()= nullptr;
             }
             this->size_--;
             return removed;
@@ -110,6 +113,16 @@ template <typename E>
         int size() const  {
             return this->size_;
         }
+
+         void print() const{
+        std::shared_ptr<Node<E>> current = head;
+        while (current){
+            std::cout<< current-> element <<" | ";
+            current= current ->next;
+        }
+        std::cout<< std::endl;
+    }
+
     };
 
 

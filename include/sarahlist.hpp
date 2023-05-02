@@ -83,7 +83,7 @@ public:
     }
 
     E removeFirst() override {
-        if (list.head== nullptr) {
+        if (head== nullptr) {
             throw std::out_of_range("list is empty");
         }
         else{

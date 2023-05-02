@@ -22,7 +22,7 @@ int main(){
 }
 
 
-//clang++ -std=c++17 -I./include  examples/aufg2.cpp -o stack
+//clang++ -std=c++17 -I./include  examples/stackmain.cpp -o stack
 //./stack
 
 
