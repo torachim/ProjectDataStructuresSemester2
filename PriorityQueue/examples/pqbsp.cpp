@@ -13,6 +13,7 @@ int main(){
     pq.insert(9, 10);
     pq.insert(22, 0);
     pq.insert(44, 22);
+    pq.remove();
     pq.print();
 
 }

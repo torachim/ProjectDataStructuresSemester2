@@ -9,36 +9,74 @@
 
 using namespace ProjectAlpha;
 
+    /// @brief Klasse welche eine Priority Queue realisiert 
+    /// @tparam T Daten eines Knoten werden generisch gespeichert
     template<class T>
+
     class PQueue_realisation : public abstract_Pqueue<T>{
     public:
 
+        /// @brief Knstruktor einer PriorityQueue
         PQueue_realisation();
 
+        /// @brief Funktion welche die groesse der PriorityQueue zuruckgibt
+        /// @return Groesse der PQ
         int get_size();
 
+        /// @brief Funktion welche einen Knoten in die PriorityQueue hinzufuegt
+        /// @param data Information welche in einem PQ Noten gespeichert wird
+        /// @param prioritaet Information nach welcher die einzelnen Knoten geordnet werden
         void insert(T data, int prioritaet);
 
+        /// @brief Funktion welche das Element mit der hoechsten Prioritaet entfernt
+        /// @return Die data des entsprechenden Element
         T remove();
 
+        /// @brief Funktion welche die PQ ausdruckt
         void print();
 
-        std::vector<PQnode <T> > Schlange;
+        
 
         
 
     private:
 
+        /// @brief PriorityQueue
+        std::vector<PQnode <T> > Schlange;
+
+        /// @brief Groesse der PriorityQueue
         int size;
 
+        /// @brief Funktion welche den Index des Elternknoten eines Knoten zurueck gibt
+        /// @param i Index des Knoten
+        /// @return int Index des Elternknoten
         int parent(int i);
 
+        /// @brief Funktion welche den Index des rechten Kindes eines Knoten zurueckgibt
+        /// @param i Index eines Knoten
+        /// @return int Index des rechten Kindes
         int right_child(int i);
 
+        /**
+         * @brief Funktion welche den Index des linken Kindes eines Knoten zurueckgibt
+         * 
+         * @param i Index eines Knoten
+         * @return int Index des linken Kindes
+         */
         int left_child(int i);
 
+        /**
+         * @brief Funktion wlche die Heapeingenschaft nach dem Entfernen des Elementes mit der hoechsten Prioritaet wiederherstellt. Rekursiv
+         * 
+         * @param i Index des Elemtes auf welches die Funktion eingesetzt werden soll
+         */
         void shift_down(int i);
 
+        /**
+         * @brief Funktion welche die Heapeigenschaft nach dem Einfuegen eines neuen Knoten wiederherstellt
+         * 
+         * @param i Index des Knoten auf welchen die Funktion eingesetzt werden soll 
+         */
         void shift_up(int i);
 
     };
@@ -49,16 +87,34 @@ using namespace ProjectAlpha;
 
 #endif
 
+    /**
+     * @brief Construct a new pqueue realisation<t>::pqueue realisation object
+     * 
+     * @tparam T 
+     */
     template<class T>
     PQueue_realisation<T>::PQueue_realisation(){
         size = 0;
         //Schlange = std::vector<std::shared_ptr<PQnode <T> > >();
     }
 
+    /**
+     * @brief Construct a new PQnode<T>::PQnode object
+     * 
+     * @tparam T 
+     * @param data 
+     * @param prioritaet 
+     */
     template<class T>
     PQnode<T>::PQnode(T data, int prioritaet): data_(data), prioritaet_(prioritaet){
     }
 
+    /**
+     * @brief 
+     * 
+     * @tparam T 
+     * @return T 
+     */
     template<class T>
     T PQnode<T>::get_data(){
         return data_;
@@ -147,7 +203,3 @@ using namespace ProjectAlpha;
             std::cout << Schlange[k].get_data() << std::endl;;
         }
     }
-
-
-
-//Hier folgt die realisation der Priority Queue
