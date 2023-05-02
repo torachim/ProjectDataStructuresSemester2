@@ -255,6 +255,9 @@ using namespace ProjectAlpha;
      */
     template<class T>
     T PQueue_realisation<T>::remove(){
+        if(size == 0){
+            throw std::logic_error("Element aus leerer Liste kann nicht entfernt werden");
+        }
         T result = Schlange[0].get_data();
         Schlange[0] = Schlange[size - 1];
         size = size - 1;

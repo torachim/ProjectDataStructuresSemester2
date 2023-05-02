@@ -7,6 +7,7 @@ using namespace ProjectAlpha;
 
 int main(){
     PQueue_realisation<int> pq = PQueue_realisation<int>();
+    pq.remove();
     pq.insert(5, 1);
     pq.insert(7, 5);
     pq.insert(100, 4);
