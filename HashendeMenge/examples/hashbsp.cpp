@@ -35,6 +35,8 @@ int main(){
     n.insert("U");
     n.insert("V");
     n.insert("W");
+    //n.insert("W");
+    //n.remove("Z");
     n.print();    
 }
 
