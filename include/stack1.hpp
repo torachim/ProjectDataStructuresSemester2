@@ -2,28 +2,27 @@
 #define STACK
 #include <iostream>
 #include "../include/stackinterface1.hpp"
-#include "../include/list1.hpp"
-//#include "../include/listnode.hpp"
-//#include "../src/linkedlist.ipp"
+///#include "../include/list1.hpp
+#include "../include/sarahlist.hpp"
+
 
 
 namespace ProjectAlpha {
 
 
-    template<class T>
+    template<class E>
 
-    class stack: public stackinterface<T> {
+    class stack: public stackinterface<E> {
 
         public:
         stack();
-        void push (T data);
-        T pop ();
+        void push (E data);
+        E pop ();
         int size();
-        bool isEmpty();
         void printStack();
 
         private:
-        List<T> list;
+        EinfachVerkettet<E> list;
 
     };
 
@@ -39,40 +38,36 @@ namespace ProjectAlpha {
 
 
 
-    template<class T>
-    stack<T>::stack(): list() {}
+    template<class E>
+    stack<E>::stack(): list() {}
 
-    template<class T>
-    void stack<T>::push(T data){
-        list.insertAfter(data);
+    template<class E>
+    void stack<E>::push(E data){
+        list.addFirst(data);
     }
 
-    template<class T>
-    T stack<T>::pop(){
-        if(isEmpty()){
-            std::cout <<"Stack is empty\n";
-            return T();
+    template<class E>
+    E stack<E>::pop(){
+        if (list.head== nullptr) {
+            throw std::out_of_range("Stack is empty");
         }
         else{
-            t value = list.removeFront()->data_;
+            E value = list.removeFirst();
             return value;
         }
     }
 
-    template<class T>
-    int stack<T>::size(){
+    template<class E>
+    int stack<E>::size(){
         return list.size();
     }
 
-    template<class T>
-    bool stack<T>::isEmpty(){
-        return(list.getHead== nullptr);
-    }
 
-    template<class T>
-    void stack<T>::printStack(){
+    template<class E>
+    void stack<E>::printStack(){
         return list.print();
     }
+    
     
     
 

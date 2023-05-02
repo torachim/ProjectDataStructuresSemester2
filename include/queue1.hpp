@@ -1,5 +1,6 @@
 #include <iostream>
 #include <../include/queueinterface1.hpp>
+#include <../include/sarahdlist.hpp>
 
 namespace ProjectAlpha{
 
@@ -12,11 +13,10 @@ namespace ProjectAlpha{
         void enqueue (T data);
         T dequeue ();
         int size();
-        bool isEmpty();
         void printQueue();
 
         private:
-        DList<T> list;
+        Doppelt<T> list;
 
     };
 

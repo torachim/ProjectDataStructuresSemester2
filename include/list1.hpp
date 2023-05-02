@@ -11,9 +11,9 @@ namespace ProjectAlpha{
     class ListNode{
 
         public:
-        ListNode(T data) : data_(data), next(nullptr) {} 
+        ListNode(T data) : data_(data), next(nullptr) {};
 
-        private:
+        //private:
         std::shared_ptr<ListNode<T>> next;
         T data_;                              
 
@@ -26,15 +26,16 @@ namespace ProjectAlpha{
     class List{
 
         public:
-        List(): head(nullptr) {}
+        List(): head( nullptr) {};
         std::shared_ptr<ListNode<T>> insertFront(T);
         std::shared_ptr<ListNode<T>> removeFront();   
         int size();  
-        //std::shared_ptr<ListNode<t>> next(const std::shared_ptr<ListNode<T>>&);
+        std::shared_ptr<ListNode<T>> next(const std::shared_ptr<ListNode<T>>&);
         void print() const;
 
-        private:
-        std::shared_ptr<<ListNode<T>> head;
+        //private:
+        std::shared_ptr<ListNode<T>> head;
+        
 
     };
 
@@ -52,7 +53,7 @@ namespace ProjectAlpha{
 
 template <class T>
     std::shared_ptr<ListNode<T>> List<T> :: insertFront (T x){
-        std::shared_ptr<ListNode<t>> newPointer = std::make_shared<ListNode<T>>(x);
+        std::shared_ptr<ListNode<T>> newPointer = std::make_shared<ListNode<T>>(x);
         newPointer-> next = head;
         head = newPointer;
         return newPointer;
@@ -77,7 +78,7 @@ template <class T>
     int List<T>::size(){
         int count=0;
         std::shared_ptr<ListNode<T>> currentt = head;
-        while (curr != nullptr){
+        while (currentt != nullptr){
             count ++;
             currentt = currentt -> next;
         }
@@ -88,9 +89,9 @@ template <class T>
      template<class T>
      void List<T>::print() const{
         std::shared_ptr<ListNode<T>> current = head;
-        whilee ( current){
+        while (current){
             std::cout<< current-> data_ <<"->";
-            current->next;
+            current-> next;
         }
         std::cout<< "null"<< std::endl;
      }
