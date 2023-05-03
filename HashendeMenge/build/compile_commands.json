@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/HashendeMenge/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/ProjectAlpha.dir/examples/hashbsp.cpp.o -c \"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/HashendeMenge/examples/hashbsp.cpp\"",
+  "file": "/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/HashendeMenge/examples/hashbsp.cpp",
+  "output": "CMakeFiles/ProjectAlpha.dir/examples/hashbsp.cpp.o"
+}
+]

@@ -1,0 +1,5 @@
+/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/HashendeMenge/build/CMakeFiles/ProjectAlpha.dir
+/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/HashendeMenge/build/CMakeFiles/package.dir
+/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/HashendeMenge/build/CMakeFiles/package_source.dir
+/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/HashendeMenge/build/CMakeFiles/edit_cache.dir
+/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/HashendeMenge/build/CMakeFiles/rebuild_cache.dir

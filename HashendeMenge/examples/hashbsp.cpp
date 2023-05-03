@@ -1,5 +1,6 @@
 #include <iostream>
 #include <memory>
+#include <string>
 #include "../include/hashendeMengerealisation.hpp"
 
 using namespace ProjectAlpha;
