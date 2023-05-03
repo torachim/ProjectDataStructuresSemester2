@@ -16,7 +16,10 @@ int main(){
      s.printStack();
      s.pop();
      s.printStack();
-     std::cout<< "Stack size:" << s.size() << std::endl;
+     //s.pop();
+     //s.pop();
+     //s.pop();
+     //std::cout<< "Stack size:" << s.size() << std::endl;
      
 
 
