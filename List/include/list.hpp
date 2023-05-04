@@ -45,7 +45,7 @@ public:
     }
 
     void addFirst(E element) override {
-        head = std::make_shared<Node<E>>(element, head);
+        head = std::make_shared<Node<E>>(element);
         size_++;
     }
 

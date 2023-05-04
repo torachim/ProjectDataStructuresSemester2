@@ -3,13 +3,13 @@
 
 namespace ProjectAlpha {
 
-    template <class E>
+    template <class T>
 
     class stackinterface{
 
         public:
-            virtual void push(E) =0;  //insert_front
-            virtual E pop() =0;    //remove_front
+            virtual void push(T) =0;  //insert_front
+            virtual T pop() =0;    //remove_front
             virtual int size() =0;
 
     } ;

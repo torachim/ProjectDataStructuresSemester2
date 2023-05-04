@@ -1,10 +1,7 @@
+#pragma once
 #include <iostream>
-//#include <stdexcept>
-#include <string>
-#include <memory>
-#include "Node.hpp"
+#include "queueNode.hpp"
 #include "queueinterface.hpp"
-//#include "dlist.hpp"
 
 namespace ProjectAlpha{
 
@@ -20,7 +17,6 @@ namespace ProjectAlpha{
         void printQueue();
 
         private:
-        //queue <T> list;
         std::shared_ptr<Node <T> > tail;
         std::shared_ptr<Node <T> > head;
         int size_;
@@ -28,22 +24,12 @@ namespace ProjectAlpha{
     };
 
 
-
-
-
 /////////////Implementierung/////////
-
-
-
-
-
-    
 
 
     template<class T>
     Node<T>::Node(T element){
         element_ = element;
-
     }
 
     template<class T>
@@ -54,7 +40,6 @@ namespace ProjectAlpha{
 
     template<class T>
     void queue<T>::enqueue(T data){
-        size_ = size_ + 1;
         
         if (tail == nullptr) {
             tail = std::make_shared<Node<T>>(data);
@@ -65,11 +50,12 @@ namespace ProjectAlpha{
                 tail->next = newTail;
                 tail = newTail;
         };
+
+        size_ = size_ + 1;
     }
 
     template<class T>
     T queue<T>::dequeue(){
-        size_ = size_ - 1;
        
        if (head== nullptr) {
             throw std::out_of_range("Queue is empty");
@@ -77,6 +63,7 @@ namespace ProjectAlpha{
         
         T removed = head -> element_;
         head = head->next;
+        size_ = size_ - 1;
         
         if (head == nullptr) {
             tail = nullptr;

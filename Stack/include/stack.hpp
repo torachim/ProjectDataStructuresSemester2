@@ -1,72 +1,79 @@
-#ifndef STACK
-#define STACK
+#pragma once
 #include <iostream>
-#include "../include/stackinterface.hpp"
-#include "../include/list.hpp"
+#include "stackinterface.hpp"
+#include "stackNode.hpp"
 
 
 
 namespace ProjectAlpha {
 
 
-    template<class E>
+    template<class T>
 
-    class stack: public stackinterface<E> {
+    class stack: public stackinterface<T> {
 
         public:
         stack();
-        void push (E data);
-        E pop ();
+        void push (T data);
+        T pop ();
         int size();
         void printStack();
 
         private:
-        EinfachVerkettet<E> list;
+        std::shared_ptr<Node <T> > head;
+        int size_; 
 
     };
-
-    #endif
-
-
-
-
-
 
 
     ////////////// Implementierung /////////////
 
-
-
-    template<class E>
-    stack<E>::stack(): list() {}
-
-    template<class E>
-    void stack<E>::push(E data){
-        list.addFirst(data);
+    template<class T>
+    Node<T>::Node(T element){
+        element_ = element;
     }
 
-    template<class E>
-    E stack<E>::pop(){
-        if (list.head== nullptr) {
+    template<class T>
+    stack<T>::stack(){
+        head = nullptr;
+    }
+
+    template<class T>
+    void stack<T>::push(T data){
+        std::shared_ptr<Node <T>> newHead= std::make_shared<Node<T>>(data);
+        newHead -> next = head;
+        head = newHead;
+         size_ = size_ + 1;
+    }
+
+    template<class T>
+    T stack<T>::pop(){
+        if (head== nullptr) {
             throw std::out_of_range("Stack is empty");
         }
         else{
-            E value = list.removeFirst();
-            return value;
+            T removed = head->element_;
+            head = head->next;
+            return removed;
+            
         }
     }
 
-    template<class E>
-    int stack<E>::size(){
-        return list.size();
+    template<class T>
+    int stack<T>::size(){
+        return size_;
     }
 
 
-    template<class E>
-    void stack<E>::printStack(){
-        return list.print();
+    template<class T>
+    void stack<T>::printStack(){
+        std::shared_ptr<Node<T>> current = head;
+        while (current){
+            std::cout<< current-> element_ <<" | ";
+            current= current -> next;
+        }
+        std::cout << std::endl;
     }
-    
     
     
 

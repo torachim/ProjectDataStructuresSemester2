@@ -340,7 +340,7 @@ CMakeFiles/stackTest.dir/tests/stackTest.cpp.o: ../tests/stackTest.cpp \
   _deps/googletest-src/googletest/include/gtest/gtest_prod.h \
   ../include/stack.hpp \
   ../include/stackinterface.hpp \
-  ../include/list.hpp
+  ../include/Node.hpp
 
 
 ../include/stack.hpp:
@@ -809,8 +809,6 @@ _deps/googletest-src/googletest/include/gtest/gtest-death-test.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
 
-../include/list.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/sigstksz.h:
 
 /usr/include/x86_64-linux-gnu/bits/stat.h:
@@ -872,6 +870,8 @@ _deps/googletest-src/googletest/include/gtest/gtest-param-test.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/alloca.h:
+
+../include/Node.hpp:
 
 /usr/include/c++/11/bits/stl_heap.h:
 

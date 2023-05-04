@@ -27,4 +27,6 @@ gtest_discover_tests(stackTest)
 
 #cmake -S . -B build && cmake --build build
 #./build/ProjectAlpha
+#./build/stackTest
+
 
