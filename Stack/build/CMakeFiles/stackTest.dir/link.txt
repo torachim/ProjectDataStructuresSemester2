@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/stackTest.dir/tests/stackTest.cpp.o -o stackTest  lib/libgtest_main.a lib/libgtest.a 
