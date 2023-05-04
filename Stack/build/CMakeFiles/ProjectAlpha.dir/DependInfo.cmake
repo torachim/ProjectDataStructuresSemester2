@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/odin/p/projekt123stss/Stack/examples/stackmain.cpp" "CMakeFiles/ProjectAlpha.dir/examples/stackmain.cpp.o" "gcc" "CMakeFiles/ProjectAlpha.dir/examples/stackmain.cpp.o.d"
+  "/home/odin/p/projekt123sts/Stack/examples/stackmain.cpp" "CMakeFiles/ProjectAlpha.dir/examples/stackmain.cpp.o" "gcc" "CMakeFiles/ProjectAlpha.dir/examples/stackmain.cpp.o.d"
   )
 
 # Targets to which this target links.

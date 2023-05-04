@@ -1,7 +1,7 @@
 CMakeFiles/ProjectAlpha.dir/examples/queuemain.cpp.o: \
- /home/odin/p/projekt123stss/Queue/examples/queuemain.cpp \
+ /home/odin/p/projekt123sts/Queue/examples/queuemain.cpp \
  /usr/include/stdc-predef.h \
- /home/odin/p/projekt123stss/Queue/examples/../include/queue.hpp \
+ /home/odin/p/projekt123sts/Queue/examples/../include/queue.hpp \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -168,5 +168,5 @@ CMakeFiles/ProjectAlpha.dir/examples/queuemain.cpp.o: \
  /usr/include/c++/11/backward/auto_ptr.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h \
- /home/odin/p/projekt123stss/Queue/examples/../include/Node.hpp \
- /home/odin/p/projekt123stss/Queue/examples/../include/queueinterface.hpp
+ /home/odin/p/projekt123sts/Queue/examples/../include/Node.hpp \
+ /home/odin/p/projekt123sts/Queue/examples/../include/queueinterface.hpp

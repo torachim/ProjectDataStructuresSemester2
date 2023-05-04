@@ -8,13 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/odin/p/projekt123stss/Stack/tests/stackTest.cpp" "CMakeFiles/stackTest.dir/tests/stackTest.cpp.o" "gcc" "CMakeFiles/stackTest.dir/tests/stackTest.cpp.o.d"
+  "/home/odin/p/projekt123sts/Stack/tests/stackTest.cpp" "CMakeFiles/stackTest.dir/tests/stackTest.cpp.o" "gcc" "CMakeFiles/stackTest.dir/tests/stackTest.cpp.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/odin/p/projekt123stss/Stack/build/_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
-  "/home/odin/p/projekt123stss/Stack/build/_deps/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/odin/p/projekt123sts/Stack/build/_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "/home/odin/p/projekt123sts/Stack/build/_deps/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -1,5 +1,5 @@
-if(EXISTS "/home/odin/p/projekt123stss/Stack/build/stackTest[1]_tests.cmake")
-  include("/home/odin/p/projekt123stss/Stack/build/stackTest[1]_tests.cmake")
+if(EXISTS "/home/odin/p/projekt123sts/Stack/build/stackTest[1]_tests.cmake")
+  include("/home/odin/p/projekt123sts/Stack/build/stackTest[1]_tests.cmake")
 else()
   add_test(stackTest_NOT_BUILT stackTest_NOT_BUILT)
 endif()
