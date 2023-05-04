@@ -12,6 +12,19 @@ TEST(Pqueue, remove){
     pq.insert(100, 4);
 
     EXPECT_EQ(pq.remove(), 7);
-    EXPECT_EQ(pq.remove(), 5);
-
+    EXPECT_EQ(pq.remove(), 100);
 }
+
+using namespace ProjectAlpha;
+
+TEST(Pqueue, get_size){
+
+    PQueue_realisation<int> pq;
+
+    pq.insert(5, 1);
+    pq.insert(7, 5);
+    pq.insert(100, 4);
+
+    EXPECT_EQ(pq.get_size(), 3);
+}
+
