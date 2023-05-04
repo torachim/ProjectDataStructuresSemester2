@@ -90,14 +90,16 @@ using namespace ProjectAlpha;
                if(aktuell -> data_ == x){                       //Wenn das Head Element auf das der Pointer zeigt dem zu entfernenden Element entspricht, dann ...
                     buckets[element].remove_front();            //Dann entferne den Kopf des Buckets
                }
-               std::shared_ptr<listnode <T> > hilfe = aktuell;  //Hilfspointer
-               while(aktuell != nullptr){                       //Solange der Pointer aktuell noch auf ein Listenelement zeigt
-                    if(aktuell -> data_ == x){                  //Überpruefe ob das Element auf welches der Pointer zeigt dem zu entfernenden Element entspricht
-                         buckets[element].remove_after(hilfe);  //Enferne das Element hinter dem Hilfspointer
-                         break;                                 //Breche die Funktion ab
+               else{
+                    std::shared_ptr<listnode <T> > hilfe = aktuell;  //Hilfspointer
+                    while(aktuell != nullptr){                       //Solange der Pointer aktuell noch auf ein Listenelement zeigt
+                         if(aktuell -> data_ == x){                  //Überpruefe ob das Element auf welches der Pointer zeigt dem zu entfernenden Element entspricht
+                              buckets[element].remove_after(hilfe);  //Enferne das Element hinter dem Hilfspointer
+                              break;                                 //Breche die Funktion ab
+                         }
+                         hilfe = aktuell;                            //Wurde das Element noch nicht entfernt setze Hilfe auf aktuell
+                         aktuell = aktuell -> next;                  //Setze Aktuell auf sein NAchfolgeknoten
                     }
-                    hilfe = aktuell;                            //Wurde das Element noch nicht entfernt setze Hilfe auf aktuell
-                    aktuell = aktuell -> next;                  //Setze Aktuell auf sein NAchfolgeknoten
                }
           }
           else{                                                 //Ist s/a kleiner als 0.25

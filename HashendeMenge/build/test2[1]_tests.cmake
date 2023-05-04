@@ -1,0 +1,5 @@
+add_test([=[hashendeMengerealisation.insert]=]  [==[/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/HashendeMenge/build/test2]==] [==[--gtest_filter=hashendeMengerealisation.insert]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[hashendeMengerealisation.insert]=]  PROPERTIES WORKING_DIRECTORY [==[/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/HashendeMenge/build]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[hashendeMengerealisation.remove]=]  [==[/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/HashendeMenge/build/test2]==] [==[--gtest_filter=hashendeMengerealisation.remove]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[hashendeMengerealisation.remove]=]  PROPERTIES WORKING_DIRECTORY [==[/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/HashendeMenge/build]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  test2_TESTS hashendeMengerealisation.insert hashendeMengerealisation.remove)

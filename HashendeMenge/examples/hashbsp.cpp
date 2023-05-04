@@ -37,7 +37,7 @@ int main(){
     n.insert("V");
     n.insert("W");
     //n.insert("W");
-    //n.remove("Z");
+    n.remove("W");
     n.print();    
 }
 
