@@ -1,5 +1,5 @@
-#include <iostream>
 #include "../include/queue.hpp"
+#include <iostream>
 
 
 using namespace ProjectAlpha;

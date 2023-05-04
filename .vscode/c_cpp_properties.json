@@ -7,7 +7,8 @@
                 "/usr/include/c++/11",
                 "/usr/include/x86_64-linux-gnu/c++/11",
                 "${workspaceFolder}/.git",
-                "gtest/gtest"
+                "gtest/gtest",
+                "${workspaceFolder}/Queue/examples"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",

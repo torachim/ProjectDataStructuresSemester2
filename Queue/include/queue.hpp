@@ -1,6 +1,6 @@
 #include <iostream>
-#include <../include/queueinterface.hpp>
-#include <../include/dlist.hpp>
+#include "queueinterface.hpp"
+#include "dlist.hpp"
 
 namespace ProjectAlpha{
 

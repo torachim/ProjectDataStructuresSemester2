@@ -1,0 +1,5 @@
+add_test( Queue.enqueue_dequeue [==[/home/odin/P 1/projekt123sts/Queue/build/queueTest]==] [==[--gtest_filter=Queue.enqueue_dequeue]==] --gtest_also_run_disabled_tests)
+set_tests_properties( Queue.enqueue_dequeue PROPERTIES WORKING_DIRECTORY [==[/home/odin/P 1/projekt123sts/Queue/build]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test( Queue.size [==[/home/odin/P 1/projekt123sts/Queue/build/queueTest]==] [==[--gtest_filter=Queue.size]==] --gtest_also_run_disabled_tests)
+set_tests_properties( Queue.size PROPERTIES WORKING_DIRECTORY [==[/home/odin/P 1/projekt123sts/Queue/build]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set( queueTest_TESTS Queue.enqueue_dequeue Queue.size)
