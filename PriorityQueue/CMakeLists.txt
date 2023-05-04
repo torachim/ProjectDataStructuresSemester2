@@ -19,3 +19,9 @@ FetchContent_MakeAvailable(googletest)
 include(GoogleTest)
 
 enable_testing()
+
+add_executable(test1 test/test1.cpp)
+target_link_libraries(test1 GTest::gtest_main)
+gtest_discover_tests(test1)
+
+#cmake -S . -B build && cmake --build build

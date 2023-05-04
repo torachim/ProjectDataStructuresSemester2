@@ -205,6 +205,19 @@ ProjectAlpha/fast:
 .PHONY : ProjectAlpha/fast
 
 #=============================================================================
+# Target rules for targets named test1
+
+# Build rule for target.
+test1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test1
+.PHONY : test1
+
+# fast build rule for target.
+test1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/build
+.PHONY : test1/fast
+
+#=============================================================================
 # Target rules for targets named gmock
 
 # Build rule for target.
@@ -280,6 +293,30 @@ examples/pqbsp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectAlpha.dir/build.make CMakeFiles/ProjectAlpha.dir/examples/pqbsp.cpp.s
 .PHONY : examples/pqbsp.cpp.s
 
+test/test1.o: test/test1.cpp.o
+.PHONY : test/test1.o
+
+# target to build an object file
+test/test1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/test/test1.cpp.o
+.PHONY : test/test1.cpp.o
+
+test/test1.i: test/test1.cpp.i
+.PHONY : test/test1.i
+
+# target to preprocess a source file
+test/test1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/test/test1.cpp.i
+.PHONY : test/test1.cpp.i
+
+test/test1.s: test/test1.cpp.s
+.PHONY : test/test1.s
+
+# target to generate assembly for a file
+test/test1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/test/test1.cpp.s
+.PHONY : test/test1.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -300,9 +337,13 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... test1"
 	@echo "... examples/pqbsp.o"
 	@echo "... examples/pqbsp.i"
 	@echo "... examples/pqbsp.s"
+	@echo "... test/test1.o"
+	@echo "... test/test1.i"
+	@echo "... test/test1.s"
 .PHONY : help
 
 
