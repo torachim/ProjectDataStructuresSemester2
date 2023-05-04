@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/odin/P 1/projekt123sts/build",
+  "command": "/usr/bin/clang++   -g -o CMakeFiles/stack.dir/main.cpp.o -c \"/home/odin/P 1/projekt123sts/main.cpp\"",
+  "file": "/home/odin/P 1/projekt123sts/main.cpp"
+}
+]

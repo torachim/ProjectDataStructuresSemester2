@@ -33,6 +33,10 @@ TEST(Stack,size){
 
 }
 
+
+//clang++ -std=c++17 -I./include  tests/stackTest.cpp -o stackt
+
+
 /*TEST(Stack,printStack){
 
     stack<int>s;

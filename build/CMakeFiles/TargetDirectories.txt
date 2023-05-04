@@ -1,0 +1,5 @@
+/home/odin/P 1/projekt123sts/build/CMakeFiles/ProjectAlpha.dir
+/home/odin/P 1/projekt123sts/build/CMakeFiles/package.dir
+/home/odin/P 1/projekt123sts/build/CMakeFiles/package_source.dir
+/home/odin/P 1/projekt123sts/build/CMakeFiles/edit_cache.dir
+/home/odin/P 1/projekt123sts/build/CMakeFiles/rebuild_cache.dir

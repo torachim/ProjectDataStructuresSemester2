@@ -33,5 +33,6 @@ TEST(Queue,size){
 
 }
 
+//clang++ -std=c++17 -I./include  tests/queueTest.cpp -o queuet
 
 
