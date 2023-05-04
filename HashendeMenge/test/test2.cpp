@@ -31,3 +31,12 @@ TEST(hashendeMengerealisation, remove){
 
     EXPECT_EQ(n.size(), 5);
 }
+
+TEST(hashendeMengerealisation, find){
+
+    hashendeMengerealisation<std::string> n;
+    n.insert("5");
+
+    EXPECT_EQ(n.find("5"), true);
+
+}
