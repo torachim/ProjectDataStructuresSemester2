@@ -17,7 +17,7 @@ int main(){
      //s.pop();
      //s.pop();
      //s.pop();
-     //std::cout<< "Stack size:" << s.size() << std::endl;
+     std::cout<< "Stack size:" << s.size() << std::endl;
      
 
 

@@ -8,9 +8,9 @@ namespace ProjectAlpha {
     class stackinterface{
 
         public:
-            virtual void push(T) =0;  //insert_front
-            virtual T pop() =0;    //remove_front
-            virtual int size() =0;
+            virtual void push(T) =0;  //insert_front / Element des Typen T wird vorne im Stack eingefügt
+            virtual T pop() =0;    //remove_front  /forderste Element des Stacks wird entfernt
+            virtual int size() =0;  // gibt Größte des Stacks zurück
 
     } ;
 }
