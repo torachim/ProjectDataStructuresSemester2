@@ -1,12 +1,9 @@
-#include "../include/stack.hpp" 
 #include <iostream>
-
-
-using namespace ProjectAlpha;
+#include <stack>
 
 int main(){
 
-     stack<int>s;
+     std::stack<int>s;
 
      s.push(6);
      s.push(1);
@@ -33,8 +30,8 @@ int main(){
 }
 
 
-//clang++ -std=c++17 -I./include  examples/stackmain.cpp -o stack
-//./stack
+//clang++ -std=c++17 -I./include  examples/c++stackmain.cpp -o std::stack
+//./std::stack
 
 
  
