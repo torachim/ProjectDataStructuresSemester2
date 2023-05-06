@@ -8,7 +8,7 @@ namespace ProjectAlpha{
     class abstract_Pqueue
     {
     public:
-          virtual int get_size() = 0;
+          virtual size_t get_size() = 0;
           virtual void insert (T data, int prioritaet) = 0;
           virtual T remove() =0; 
     };

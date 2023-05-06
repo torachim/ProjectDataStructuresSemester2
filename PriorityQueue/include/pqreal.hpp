@@ -21,7 +21,7 @@ using namespace ProjectAlpha;
 
         /// @brief Funktion welche die groesse der PriorityQueue zuruckgibt
         /// @return Groesse der PQ
-        int get_size();
+        size_t get_size();
 
         /// @brief Funktion welche einen Knoten in die PriorityQueue hinzufuegt
         /// @param data Information welche in einem PQ Noten gespeichert wird
@@ -45,7 +45,7 @@ using namespace ProjectAlpha;
         std::vector<PQnode <T> > Schlange;
 
         /// @brief Groesse der PriorityQueue
-        int size;
+        size_t size;
 
         /// @brief Funktion welche den Index des Elternknoten eines Knoten zurueck gibt
         /// @param i Index des Knoten
@@ -127,7 +127,7 @@ using namespace ProjectAlpha;
      * @return int 
      */
     template<class T>
-    int PQueue_realisation<T>::get_size(){
+    size_t PQueue_realisation<T>::get_size(){
         return size;
     }
 
