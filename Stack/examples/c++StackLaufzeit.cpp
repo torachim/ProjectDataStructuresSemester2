@@ -17,6 +17,7 @@ int main(){
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
     std::cout << "Zeit für das Pushen: " << duration << " Mikrosekunden\n";
 
+
     // Messung der Zeit für das Popping von 1000000 Elementen vom Stack
     start = std::chrono::high_resolution_clock::now();
     for (int i = 0; i < 100000000; ++i)
