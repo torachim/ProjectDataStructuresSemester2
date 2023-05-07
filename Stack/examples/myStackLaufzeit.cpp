@@ -11,7 +11,7 @@ int main(){
 
       // Messung der Zeit für das Pushen von x Elementen auf den Stack
     auto start = std::chrono::high_resolution_clock::now();
-    for (int i = 0; i < 10000000; ++i)
+    for (int i = 0; i < 100000000; ++i)
     {
         s.push(i);
     }
@@ -22,7 +22,7 @@ int main(){
 
     // Messung der Zeit für das Popping von x Elementen vom Stack
     start = std::chrono::high_resolution_clock::now();
-    for (int i = 0; i < 10000000; ++i)
+    for (int i = 0; i < 100000000; ++i)
     {
         s.pop();
     }
