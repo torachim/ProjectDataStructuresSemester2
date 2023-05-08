@@ -148,8 +148,8 @@ CMakeFiles/ProjectAlpha.dir/examples/stackmain.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/odin/p/projekt123sts/Stack/examples/../include/../include/stackinterface.hpp \
- /home/odin/p/projekt123sts/Stack/examples/../include/Node.hpp \
+ /home/odin/p/projekt123sts/Stack/examples/../include/stackinterface.hpp \
+ /home/odin/p/projekt123sts/Stack/examples/../include/stackNode.hpp \
  /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/stl_raw_storage_iter.h \

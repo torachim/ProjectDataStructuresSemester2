@@ -183,7 +183,7 @@ CMakeFiles/ProjectAlpha.dir/examples/stackmain.cpp.o: ../examples/stackmain.cpp 
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../include/stackinterface.hpp \
-  ../include/Node.hpp \
+  ../include/stackNode.hpp \
   /usr/include/c++/11/memory \
   /usr/include/c++/11/bits/stl_uninitialized.h \
   /usr/include/c++/11/bits/stl_tempbuf.h \
@@ -230,6 +230,8 @@ CMakeFiles/ProjectAlpha.dir/examples/stackmain.cpp.o: ../examples/stackmain.cpp 
 /usr/include/c++/11/bits/stl_uninitialized.h:
 
 /usr/include/c++/11/memory:
+
+../include/stackNode.hpp:
 
 ../include/stackinterface.hpp:
 
@@ -602,8 +604,6 @@ CMakeFiles/ProjectAlpha.dir/examples/stackmain.cpp.o: ../examples/stackmain.cpp 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
-
-../include/Node.hpp:
 
 /usr/include/c++/11/bits/locale_classes.h:
 

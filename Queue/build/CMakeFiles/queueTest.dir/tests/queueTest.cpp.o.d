@@ -275,5 +275,5 @@ CMakeFiles/queueTest.dir/tests/queueTest.cpp.o: \
  /home/odin/p/projekt123sts/Queue/build/_deps/googletest-src/googletest/include/gtest/gtest_pred_impl.h \
  /home/odin/p/projekt123sts/Queue/build/_deps/googletest-src/googletest/include/gtest/gtest_prod.h \
  /home/odin/p/projekt123sts/Queue/tests/../include/queue.hpp \
- /home/odin/p/projekt123sts/Queue/tests/../include/Node.hpp \
+ /home/odin/p/projekt123sts/Queue/tests/../include/queueNode.hpp \
  /home/odin/p/projekt123sts/Queue/tests/../include/queueinterface.hpp

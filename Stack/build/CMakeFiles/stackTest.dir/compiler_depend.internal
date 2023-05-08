@@ -341,5 +341,5 @@ CMakeFiles/stackTest.dir/tests/stackTest.cpp.o
  /home/odin/p/projekt123sts/Stack/build/_deps/googletest-src/googletest/include/gtest/gtest_prod.h
  /home/odin/p/projekt123sts/Stack/include/stack.hpp
  /home/odin/p/projekt123sts/Stack/include/stackinterface.hpp
- /home/odin/p/projekt123sts/Stack/include/Node.hpp
+ /home/odin/p/projekt123sts/Stack/include/stackNode.hpp
 

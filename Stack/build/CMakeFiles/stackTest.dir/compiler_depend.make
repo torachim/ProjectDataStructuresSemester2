@@ -340,7 +340,7 @@ CMakeFiles/stackTest.dir/tests/stackTest.cpp.o: ../tests/stackTest.cpp \
   _deps/googletest-src/googletest/include/gtest/gtest_prod.h \
   ../include/stack.hpp \
   ../include/stackinterface.hpp \
-  ../include/Node.hpp
+  ../include/stackNode.hpp
 
 
 ../include/stack.hpp:
@@ -482,6 +482,8 @@ _deps/googletest-src/googletest/include/gtest/gtest-assertion-result.h:
 /usr/include/c++/11/bits/basic_string.h:
 
 /usr/include/pthread.h:
+
+../include/stackNode.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
@@ -870,8 +872,6 @@ _deps/googletest-src/googletest/include/gtest/gtest-param-test.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/alloca.h:
-
-../include/Node.hpp:
 
 /usr/include/c++/11/bits/stl_heap.h:
 

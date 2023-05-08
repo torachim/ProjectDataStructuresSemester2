@@ -182,6 +182,7 @@ CMakeFiles/ProjectAlpha.dir/examples/queuemain.cpp.o: ../examples/queuemain.cpp 
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
+  ../include/queueNode.hpp \
   /usr/include/c++/11/memory \
   /usr/include/c++/11/bits/stl_uninitialized.h \
   /usr/include/c++/11/bits/stl_tempbuf.h \
@@ -207,7 +208,6 @@ CMakeFiles/ProjectAlpha.dir/examples/queuemain.cpp.o: ../examples/queuemain.cpp 
   /usr/include/c++/11/backward/auto_ptr.h \
   /usr/include/c++/11/pstl/glue_memory_defs.h \
   /usr/include/c++/11/pstl/execution_defs.h \
-  ../include/Node.hpp \
   ../include/queueinterface.hpp
 
 
@@ -230,6 +230,8 @@ CMakeFiles/ProjectAlpha.dir/examples/queuemain.cpp.o: ../examples/queuemain.cpp 
 /usr/include/c++/11/bits/stl_uninitialized.h:
 
 /usr/include/c++/11/memory:
+
+../include/queueNode.hpp:
 
 /usr/include/c++/11/bits/istream.tcc:
 
@@ -602,8 +604,6 @@ CMakeFiles/ProjectAlpha.dir/examples/queuemain.cpp.o: ../examples/queuemain.cpp 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
-
-../include/Node.hpp:
 
 /usr/include/c++/11/bits/locale_classes.h:
 

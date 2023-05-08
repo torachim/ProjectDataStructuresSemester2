@@ -339,7 +339,7 @@ CMakeFiles/queueTest.dir/tests/queueTest.cpp.o: ../tests/queueTest.cpp \
   _deps/googletest-src/googletest/include/gtest/gtest_pred_impl.h \
   _deps/googletest-src/googletest/include/gtest/gtest_prod.h \
   ../include/queue.hpp \
-  ../include/Node.hpp \
+  ../include/queueNode.hpp \
   ../include/queueinterface.hpp
 
 
@@ -773,6 +773,8 @@ _deps/googletest-src/googletest/include/gtest/internal/gtest-port-arch.h:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
+../include/queueNode.hpp:
+
 _deps/googletest-src/googletest/include/gtest/gtest-death-test.h:
 
 /usr/include/c++/11/bits/predefined_ops.h:
@@ -870,8 +872,6 @@ _deps/googletest-src/googletest/include/gtest/gtest-param-test.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/alloca.h:
-
-../include/Node.hpp:
 
 /usr/include/c++/11/bits/stl_heap.h:
 

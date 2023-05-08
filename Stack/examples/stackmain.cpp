@@ -20,9 +20,10 @@ int main(){
      s.push(6);
      s.push(1);
      s.push(9);
-     //s.printStack();
+     s.printStack();
      s.pop();
-     //s.printStack();
+     s.pop();
+     s.printStack();
      //s.pop();
      //s.pop();
      //s.pop();

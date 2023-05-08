@@ -17,8 +17,6 @@ int main(){
      q.printQueue();
      std::cout<< "Queue size:" << q.size() << std::endl;
 
-
-
 }
 
 //clang++ -std=c++17 -I./include  examples/queuemain.cpp -o queue

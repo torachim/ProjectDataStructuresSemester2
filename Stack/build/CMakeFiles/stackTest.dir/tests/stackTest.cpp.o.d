@@ -275,5 +275,5 @@ CMakeFiles/stackTest.dir/tests/stackTest.cpp.o: \
  /home/odin/p/projekt123sts/Stack/build/_deps/googletest-src/googletest/include/gtest/gtest_pred_impl.h \
  /home/odin/p/projekt123sts/Stack/build/_deps/googletest-src/googletest/include/gtest/gtest_prod.h \
  /home/odin/p/projekt123sts/Stack/tests/../include/stack.hpp \
- /home/odin/p/projekt123sts/Stack/tests/../include/../include/stackinterface.hpp \
- /home/odin/p/projekt123sts/Stack/tests/../include/Node.hpp
+ /home/odin/p/projekt123sts/Stack/tests/../include/stackinterface.hpp \
+ /home/odin/p/projekt123sts/Stack/tests/../include/stackNode.hpp
