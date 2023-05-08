@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/ProjectAlpha.dir/examples/pqbsp.cpp.o -c \"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/examples/pqbsp.cpp\"",
+  "file": "/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/examples/pqbsp.cpp",
+  "output": "CMakeFiles/ProjectAlpha.dir/examples/pqbsp.cpp.o"
+},
+{
+  "directory": "/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build",
+  "command": "/usr/bin/clang++  -isystem \"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googletest/include\" -isystem \"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googletest\" -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/test1.dir/test/test1.cpp.o -c \"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/test/test1.cpp\"",
+  "file": "/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/test/test1.cpp",
+  "output": "CMakeFiles/test1.dir/test/test1.cpp.o"
+},
+{
+  "directory": "/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/clang++  -I\"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googlemock/include\" -I\"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googlemock\" -isystem \"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googletest/include\" -isystem \"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googletest\" -g -std=c++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c \"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googlemock/src/gmock-all.cc\"",
+  "file": "/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+},
+{
+  "directory": "/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/clang++  -isystem \"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googlemock/include\" -isystem \"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googlemock\" -isystem \"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googletest/include\" -isystem \"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googletest\" -g -std=c++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c \"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googlemock/src/gmock_main.cc\"",
+  "file": "/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+},
+{
+  "directory": "/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/clang++  -I\"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googletest/include\" -I\"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googletest\" -g -std=c++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c \"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googletest/src/gtest-all.cc\"",
+  "file": "/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+},
+{
+  "directory": "/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/clang++  -isystem \"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googletest/include\" -isystem \"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googletest\" -g -std=c++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c \"/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googletest/src/gtest_main.cc\"",
+  "file": "/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/PriorityQueue/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+}
+]

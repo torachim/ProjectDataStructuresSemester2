@@ -1,0 +1,5 @@
+if(EXISTS "/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/HashendeMenge/build/test2[1]_tests.cmake")
+  include("/Users/torgerau/Desktop/Uni Stuff/POOSE/projekt123sts/HashendeMenge/build/test2[1]_tests.cmake")
+else()
+  add_test(test2_NOT_BUILT test2_NOT_BUILT)
+endif()
