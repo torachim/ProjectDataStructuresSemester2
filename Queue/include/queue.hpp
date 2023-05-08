@@ -36,6 +36,7 @@ namespace ProjectAlpha{
     queue<T>::queue(){        //Queue Konstruktor
         head = nullptr;       //Queue wird als leer makiert
         tail = nullptr;       //Queue wird als leer makiert
+        size_=0;
     }
 
     template<class T>

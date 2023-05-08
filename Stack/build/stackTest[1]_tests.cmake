@@ -1,5 +1,5 @@
 add_test( Stack.push_pop /home/odin/p/projekt123sts/Stack/build/stackTest [==[--gtest_filter=Stack.push_pop]==] --gtest_also_run_disabled_tests)
 set_tests_properties( Stack.push_pop PROPERTIES WORKING_DIRECTORY /home/odin/p/projekt123sts/Stack/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-add_test( Stack.size /home/odin/p/projekt123sts/Stack/build/stackTest [==[--gtest_filter=Stack.size]==] --gtest_also_run_disabled_tests)
-set_tests_properties( Stack.size PROPERTIES WORKING_DIRECTORY /home/odin/p/projekt123sts/Stack/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-set( stackTest_TESTS Stack.push_pop Stack.size)
+add_test( Stack.Size /home/odin/p/projekt123sts/Stack/build/stackTest [==[--gtest_filter=Stack.Size]==] --gtest_also_run_disabled_tests)
+set_tests_properties( Stack.Size PROPERTIES WORKING_DIRECTORY /home/odin/p/projekt123sts/Stack/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set( stackTest_TESTS Stack.push_pop Stack.Size)

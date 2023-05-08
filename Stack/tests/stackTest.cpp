@@ -6,10 +6,9 @@ using namespace ProjectAlpha;
 //Test: werden die richtigen Elemente eingefügt und das richtige entfernt?
 
 
-stack<int>s;
-
 TEST(Stack,push_pop){  
 
+    stack<int> s;
      s.push(6);
      s.push(1);
      s.push(9);
@@ -25,6 +24,7 @@ TEST(Stack,push_pop){
 
 TEST(Stack,Size){
 
+    stack<int> s;
     s.push(1);
     s.push(2);
 

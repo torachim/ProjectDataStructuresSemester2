@@ -36,6 +36,7 @@ namespace ProjectAlpha {
     template<class T>
     stack<T>::stack(){            //Stack Konstrukter
         head = nullptr;           //Liste als leer makiert
+        size_ = 0;
     }
 
     template<class T>
