@@ -1,0 +1,5 @@
+if(EXISTS "/home/odin/p/projekt123sts/Queue/build/queueTest[1]_tests.cmake")
+  include("/home/odin/p/projekt123sts/Queue/build/queueTest[1]_tests.cmake")
+else()
+  add_test(queueTest_NOT_BUILT queueTest_NOT_BUILT)
+endif()

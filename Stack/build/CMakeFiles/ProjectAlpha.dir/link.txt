@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/ProjectAlpha.dir/examples/stackmain.cpp.o -o ProjectAlpha 
